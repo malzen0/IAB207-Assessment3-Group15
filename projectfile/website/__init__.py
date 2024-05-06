@@ -6,6 +6,7 @@ from flask_login import LoginManager
 
 db = SQLAlchemy()
 
+
 #create a function that creates a web application
 # a web server will run this web application
 def create_app():

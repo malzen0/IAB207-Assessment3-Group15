@@ -8,6 +8,7 @@ from . import db
 # Create a blueprint - make sure all BPs have unique names
 auth_bp = Blueprint('auth', __name__)
 
+
 # this is the hint for a login function
 # @auth_bp.route('/login', methods=['GET', 'POST'])
 # def authenticate(): #view function
