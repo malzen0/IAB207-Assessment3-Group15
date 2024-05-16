@@ -8,8 +8,8 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), index=True, unique=True, nullable=False)
     emailid = db.Column(db.String(100), index=True, nullable=False)
-    # Password stores as hash value
     password_hash = db.Column(db.String(255), nullable=False)
+    mobile_num = db.Column(db.String(20))
     comments = db.relationship('Comment', backref='user')
     
     # String print method 
@@ -24,7 +24,12 @@ class Event(db.Model):
     name = db.Column(db.String(80))
     description = db.Column(db.String(200))
     image = db.Column(db.String(400))
+    event_genre = db.Column(db.String(100))
+    event_location = db.Column(db.String(300))
+    event_date = db.Column(db.DateTime, default = datetime.date())
+    tickets = db.Column(db.Integer)
     cost = db.Column(db.Float(20))
+    
     
     comments = db.relationship('Comment', backref='event')
     
@@ -43,6 +48,7 @@ class EventStatus(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     status = db.Column(db.String(20))
     tickets_available = db.Column(db.Integer)
+    status_date = db.Column(db.DateTime, default = datetime.now())
     
     
     #String print method
