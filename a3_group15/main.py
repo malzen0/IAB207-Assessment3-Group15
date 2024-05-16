@@ -1,4 +1,4 @@
-from website import create_app
+from local_spotlights import create_app
 
 # TAMMY TEST COMMENT
 
