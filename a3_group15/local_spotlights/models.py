@@ -11,6 +11,7 @@ class User(db.Model, UserMixin):
     password_hash = db.Column(db.String(255), nullable=False)
     mobile_num = db.Column(db.String(20))
     comments = db.relationship('Comment', backref='user')
+    events = db.relationship('Event', backref='user')
     
     # String print method 
     def __repr__(self):
