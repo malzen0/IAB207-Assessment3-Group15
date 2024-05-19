@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='content/create_event_style.css') }}" />
+{% endblock head %}
+
+<body class="body">
+{% block content %}
+    <!--navbar from w3schools-->
+
+    <div class="row" style="margin: 50px 70px 100px 70px; background-color: darkred; border-radius: 10px;">
+        <h1 style="color: white; text-decoration: underline; text-align: center; margin-top:30px;">Event Creator</h1>
+        <div class="col-md-7">
+            <div class="container">
+
+                <form action="action_page.php">
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fname">Artist</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="fname" name="firstname" placeholder="Artist name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="genre">Genre</label>
+                        </div>
+                        <div class="col-75">
+                            <select id="genre" name="genre">
+                                <option value="rock">Rock</option>
+                                <option value="metal">Metal</option>
+                                <option value="pop">Pop</option>
+                                <option value="blues/jazz">Blues/Jazz</option>
+                                <option value="country">Country</option>
+                                <option value="alternative">Alternative</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="lname">Venue</label>
+                        </div>
+
+                        <div class="col-75">
+                            <input type="text" id="lname" name="lastname" placeholder="Venue name and location..">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="time">Time</label>
+                        </div>
+
+                        <div class="col-75">
+                            <input type="time" id="time" name="time">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="date">Date</label>
+                        </div>
+
+                        <div class="col-75">
+                            <input type="date" id="date" name="date">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fname">Ticket Qnt.</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="number" id="tquant" name="ticket qnt." placeholder="Ticket quantity..">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fname">Ticket Price</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="number" id="tprice" name="ticket price" placeholder="Price per ticket..">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="comments">Comments?</label>
+                        </div>
+                        <div class="col-75">
+                            <select id="comments" name="comments">
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="genre">Status</label>
+                        </div>
+                        <div class="col-75">
+                            <select id="status" name="status">
+                                <option value="open">Open</option>
+                                <option value="inactive">Inactive</option>
+                                <option value="sold out">Sold Out</option>
+                                <option value="cancelled">Cancelled</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="container">
+                <img src="static/img/placeholder.png" style="width:90%; height:auto; padding-top: 30px; margin-left:auto; margin-right: auto; display:block" />
+                <form action="/action_page.php" style="margin-bottom: 25px;">
+                    <label for="img">Select an image for your event:</label>
+                    <input type="file" name="img" accept="image/*">
+                </form>
+                <form>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="description">Description</label>
+                        </div>
+                        <div class="col-md-12">
+                            <textarea id="description" name="description" placeholder="Write something.." style="height:200px"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row" style="margin-left:auto; margin-right: auto;
+         margin-top:25px; display: block; margin-bottom: 50px;">
+            <input type="submit" value="CREATE">
+        </div>
+    </div>
+    {% endblock content %}
+</body>
+</html>

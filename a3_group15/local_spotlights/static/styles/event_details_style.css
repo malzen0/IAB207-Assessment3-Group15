@@ -1,0 +1,120 @@
+body {
+    background-color: indianred;
+    font-size: 30px;
+    font-family: Pixelify Sans;
+    font-weight: 500;
+}
+ul {
+    list-style-type: none;
+    background-color: white;
+    border-radius: 10px;
+    break-after: auto;
+    height: 500px;
+    overflow-y: auto;
+}
+
+.event_text_box {
+    background-color: pink;
+    color: black;
+    font-size: 22px;
+    border-radius: 10px 10px;
+    margin-left: 100px;
+}
+
+    ul li {
+        margin-bottom: 10px;
+    }
+
+.topnav {
+    background-color: pink;
+    overflow: hidden;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 32px;
+        font-family: Pixelify Sans;
+        font-weight: 500;
+    }
+
+        .topnav a:hover {
+            background-color: pink;
+            color: none;
+        }
+
+        .topnav a.active {
+            color: darkred;
+            font-size: 32px;
+        }
+
+    .topnav .icon {
+        display: none;
+    }
+
+.container-fluid {
+    background-color: pink;
+    border-radius: 10px;
+    height: auto;
+    padding-bottom: 25px;
+    margin-bottom: 0px;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 100%;
+    margin-top: 6px;
+    
+}
+
+.user {
+    color: darkred;
+    font-weight: 700;
+}
+
+
+.event_booking {
+    width: 100%;
+}
+
+.comment_box {
+    overflow: visible;
+    margin-left: 10px;
+}

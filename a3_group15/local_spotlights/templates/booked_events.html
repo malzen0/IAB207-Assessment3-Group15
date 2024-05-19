@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='content/booked_event_style.css') }}" />
+{% endblock head %}
+
+<body class="body">
+{% block content %}
+
+    <div class="main_container">
+        <div style="font-size: 40px; text-decoration: underline; text-align: center; color:white;
+        margin-bottom:25px;">Booked Events</div>
+        {% for event in events %}
+        <div class="container">
+            <div class="image">
+                <img src="{{ event.image_url }}" alt="{{ event.alt_text }}">
+            </div>
+            <div class="text">
+                <h2>{{ event.name }}</h2>
+                <div class="price"><p> {{ event.venue }} </p> </div>
+                <div class="price"><p> Genre: {{ event.genre }} </p> </div>
+                <div class="status"><p> STATUS: {{ event.status }} </p> </div>
+                <a class="details" href="{{ event.details_url }}" target="_blank">View Details</a>
+            </div>
+            <div class="event_wrapper">
+                <h2 style="color: black; text-decoration: underline;">Order Details: </h2>
+                <div class="date"><p>Date: {{ event.date }} </p></div>
+                <div class="order_time"><p> {{ event.time }}</p> </div>
+                <div class="orderID"><p>OrderID: {{ event.order_id }}</p> </div>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="container">
+            <div class="image">
+                <img src="static/img/event_2.jpg" alt="man on stage">
+            </div>
+            <div class="text">
+                <h2>Fairy Fighters</h2>
+                <div class="price"><p> Fortitude Music Hall </p> </div>
+                <div class="price"><p> Genre: Rock </p> </div>
+                <div class="status"><p> STATUS: SOLD OUT </p> </div>
+                <a class="details" href="event_details.html" target="_blank">View Details</a>
+            </div>
+            <div class="event_wrapper">
+                <h2 style="color: black; text-decoration: underline;">Order Details: </h2>
+                <div class="date"><p>Date: 04/04/24</p></div>
+                <div class="order_time"><p>Time: 12:56PM</p> </div>
+                <div class="orderID"><p>OrderID: 00003</p> </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="image">
+                <img src="static/img/event_3.jpg" alt="man on stage">
+            </div>
+            <div class="text">
+                <h2>Kittensica</h2>
+                <div class="price"><p> Fortitude Music Hall </p> </div>
+                <div class="price"><p> Genre: Rock </p> </div>
+                <div class="status"><p> STATUS: CANCELLED </p> </div>
+                <a class="details" href="event_details.html" target="_blank">View Details</a>
+            </div>
+            <div class="event_wrapper">
+                <h2 style="color: black; text-decoration: underline;">Order Details: </h2>
+                <div class="date"><p>Date: 5/03/24</p></div>
+                <div class="order_time"><p>Time: 9:27AM</p> </div>
+                <div class="orderID"><p>OrderID: 00002</p> </div>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}
+</body>
+</html>

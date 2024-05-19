@@ -1,0 +1,115 @@
+body {
+    background-color: indianred;
+    font-size: 30px;
+    font-family: Pixelify Sans;
+    font-weight: 500;
+}
+/*Navigation/heading bars*/
+.topnav {
+    background-color: pink;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 32px;
+        font-family: Pixelify Sans;
+        font-weight: 500;
+    }
+
+        .topnav a:hover {
+            background-color: pink;
+            color: none;
+        }
+
+        .topnav a.active {
+            color: darkred;
+            font-size: 32px;
+        }
+
+    .topnav .icon {
+        display: none;
+    }
+
+/* Style inputs, select elements and textareas */
+input[type=text], input[type=number], input[type=time], input[type=date], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    background-color: pink;
+}
+
+
+
+/* Style the label to display next to the inputs */
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+/* Style the submit button */
+input[type=submit] {
+    background-color: pink;
+    color: darkred;
+    padding: 12px 20px;
+    border-radius:10px;
+    border: none;
+    cursor: pointer;
+    float: right;
+}
+
+input::file-selector-button {
+    background-color: pink;
+}
+
+
+/* Style the container */
+
+
+/* Floating column for labels: 25% width */
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+.container {
+    background-color: antiquewhite;
+    border-radius: 10px;
+    height: auto;
+    padding-bottom: 25px;
+    width: 100%;
+    height: 100%
+
+}

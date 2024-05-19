@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\a3_group15",
+    "\\a3_group15\\local_spotlights",
+    "\\a3_group15\\local_spotlights\\static",
+    "\\a3_group15\\local_spotlights\\static\\styles",
+    "\\a3_group15\\local_spotlights\\templates"
   ],
-  "SelectedNode": "\\C:\\Users\\choch\\Documents\\UNI\\2024\\IAB207\\assessments\\assessment 3\\git repo",
+  "SelectedNode": "\\a3_group15\\local_spotlights\\models.py",
   "PreviewInSolutionExplorer": false
 }

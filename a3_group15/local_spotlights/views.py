@@ -1,8 +1,13 @@
-from flask import Blueprint
+from datetime import datetime
+from flask import Blueprint, render_template
 
 main_bp = Blueprint('main', __name__)
 
 
 @main_bp.route('/')
 def index():
-    return '<h1>Starter code for the assessment<h1>'
+    return render_template(
+        'index.html',
+        title='Home Page',
+        year=datetime.now().year,
+    )
