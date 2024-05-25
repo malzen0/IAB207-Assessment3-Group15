@@ -1,11 +1,26 @@
 {% extends "base.html" %}
+
+{% from 'bootstrap5/form.html' import render_form %}
+
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='content/create_event_style.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/create_event_style.css') }}" />
 {% endblock head %}
 
 <body class="body">
 {% block content %}
-    <!--navbar from w3schools-->
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <h1>Create Event</h1>
+                <p>Enter Event Details</p>
+                {{render_form(form)}}
+            </div>
+        </div>
+    </div>
+
+    
+    <!--NEED TO ADD THIS TO THE FORM LAYOUT - - - - - - - - - - - - -
 
     <div class="row" style="margin: 50px 70px 100px 70px; background-color: darkred; border-radius: 10px;">
         <h1 style="color: white; text-decoration: underline; text-align: center; margin-top:30px;">Event Creator</h1>
@@ -130,6 +145,7 @@
             <input type="submit" value="CREATE">
         </div>
     </div>
+    -->
     {% endblock content %}
 </body>
 </html>

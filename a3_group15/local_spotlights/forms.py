@@ -1,8 +1,11 @@
 from flask_wtf import FlaskForm
+from flask_wtf.file import FileAllowed, FileRequired
 from wtforms import DateField, IntegerField, SelectField
-from wtforms.fields import TextAreaField,SubmitField, StringField, PasswordField
+from wtforms.fields import TextAreaField,SubmitField, StringField, PasswordField, FileField, IntegerField, FloatField
 from wtforms.validators import InputRequired, Length, Email, EqualTo, NumberRange
  
+ALLOWED_FILE = {'PNG', 'JPG', 'JPEG', 'png', 'jpg', 'jpeg'}
+
 #creates the login information
 class LoginForm(FlaskForm):
     user_name=StringField("User Name", validators=[InputRequired('Enter user name')])
@@ -24,8 +27,8 @@ class BookingButtonForm(FlaskForm):
     book_tickets = SubmitField("BOOK TICKETS HERE!")
 
 class CommentForm(FlaskForm):
-    comment = TextAreaField("Write a Comment", validators=[InputRequired()])
-    submit = SubmitField("POST")
+    comment = TextAreaField("Write a Comment", validators=[InputRequired()], render_kw={"class": "form-control custom-text-area"})
+    submit = SubmitField("POST", render_kw={"class": "btn custom-btn"})
 
 # This is the event creation form
 class EventForm(FlaskForm):
@@ -34,12 +37,10 @@ class EventForm(FlaskForm):
     venue = StringField("Venue")
     time = StringField("Time")
     date = DateField("Date")
-    ticket_quantity = StringField("Ticket Quantity")
-    ticket_price = StringField("Ticket Price")
-    comments = SelectField("Comments?", choices=[('yes', 'Yes'), ('no', 'No')])
-    status = SelectField("Status", choices=[('open', 'Open'), ('inactive', 'Inactive'), ('sold out', 'Sold Out'), ('cancelled', 'Cancelled')])
+    ticket_quantity = IntegerField("Ticket Quantity")
+    ticket_price = FloatField("Ticket Price")
     description = TextAreaField("Description")
-    img = StringField("Image")
+    img = FileField("Image", validators= [FileRequired(message='Image cannot be empty'), FileAllowed(ALLOWED_FILE, message='Only supports png, jpg, JPG, PNG')])
     submit = SubmitField("Create Event")
 
 #This is the ticket booking form 
