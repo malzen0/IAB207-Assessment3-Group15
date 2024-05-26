@@ -1,8 +1,14 @@
 body {
-    background-color: indianred;
+    background-color: indianred !important;
     font-size: 30px;
-    font-family: Pixelify Sans;
+    font-family: Pixelify Sans !important;
     font-weight: 500;
+}
+.azeret-mono-<uniquifier > {
+    font-family: "Azeret Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
 }
 /*Navigation/heading bars*/
 .topnav {
@@ -11,6 +17,15 @@ body {
     margin-bottom: 20px;
 }
 
+h1{
+    font-size:30px;
+    text-decoration: underline;
+}
+
+label {
+    font-size: 25px;
+    font-family: Azeret Mono;
+}
     .topnav a {
         float: left;
         display: block;
@@ -19,7 +34,7 @@ body {
         padding: 14px 16px;
         text-decoration: none;
         font-size: 32px;
-        font-family: Pixelify Sans;
+        font-family: Pixelify Sans !important;
         font-weight: 500;
     }
 
@@ -113,3 +128,24 @@ input::file-selector-button {
     height: 100%
 
 }
+
+.form-container {
+    background-color: pink;
+    border: 2px solid black !important;
+    font-family: Azeret Mono;
+}
+
+.form-submit {
+    background-color: pink;
+    border: 2px solid black !important;
+    font-family: Azeret Mono !important;
+}
+
+.form-control {
+    background-color: pink !important;
+    height: 100% !important;
+    width: auto;
+    font-family:Azeret Mono !important;
+    border: 2px solid black !important;
+}
+

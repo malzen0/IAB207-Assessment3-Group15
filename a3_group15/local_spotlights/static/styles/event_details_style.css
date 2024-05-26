@@ -1,5 +1,5 @@
 body {
-    background-color: indianred;
+    background-color: indianred !important;
     font-size: 30px;
     font-family: Pixelify Sans;
     font-weight: 500;
@@ -19,6 +19,7 @@ ul {
     font-size: 22px;
     border-radius: 10px 10px;
     margin-left: 100px;
+    font-family: Pixelify Sans;
 }
 
     ul li {
@@ -40,7 +41,7 @@ ul {
         padding: 14px 16px;
         text-decoration: none;
         font-size: 32px;
-        font-family: Pixelify Sans;
+        font-family: VT323;
         font-weight: 500;
     }
 
@@ -64,6 +65,7 @@ ul {
     height: auto;
     padding-bottom: 25px;
     margin-bottom: 0px;
+    font-family: Pixelify Sans;
 }
 
 input[type=text], select, textarea {
@@ -73,16 +75,18 @@ input[type=text], select, textarea {
     border-radius: 4px;
     box-sizing: border-box;
     resize: vertical;
+    font-family: Pixelify Sans;
 }
 
 input[type=submit] {
-    background-color: #04AA6D;
+    background-color: darkred;
     color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     float: right;
+    font-family: Pixelify Sans;
 }
 
 .container {
@@ -107,6 +111,7 @@ input[type=submit] {
 .user {
     color: darkred;
     font-weight: 700;
+    font-family: Pixelify Sans;
 }
 
 
@@ -118,3 +123,17 @@ input[type=submit] {
     overflow: visible;
     margin-left: 10px;
 }
+
+.custom-btn {
+    background-color: darkred;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+

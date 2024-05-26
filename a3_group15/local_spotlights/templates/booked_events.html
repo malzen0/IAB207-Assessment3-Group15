@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='content/booked_event_style.css') }}" />
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/booked_event_style.css') }}" />
 {% endblock head %}
 
 <body class="body">
-{% block content %}
+    {% block content %}
 
     <div class="main_container">
         <div style="font-size: 40px; text-decoration: underline; text-align: center; color:white;
@@ -70,4 +70,3 @@
     </div>
     {% endblock content %}
 </body>
-</html>

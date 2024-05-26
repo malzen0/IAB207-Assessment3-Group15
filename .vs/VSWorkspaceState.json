@@ -2,11 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\a3_group15",
+    "\\a3_group15\\instance",
     "\\a3_group15\\local_spotlights",
     "\\a3_group15\\local_spotlights\\static",
+    "\\a3_group15\\local_spotlights\\static\\img",
     "\\a3_group15\\local_spotlights\\static\\styles",
-    "\\a3_group15\\local_spotlights\\templates"
+    "\\a3_group15\\local_spotlights\\templates",
+    "\\a3_group15\\local_spotlights\\templates\\events"
   ],
-  "SelectedNode": "\\a3_group15\\local_spotlights\\models.py",
+  "SelectedNode": "\\a3_group15\\local_spotlights\\templates\\index.html",
   "PreviewInSolutionExplorer": false
 }

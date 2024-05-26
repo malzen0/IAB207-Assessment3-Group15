@@ -1,0 +1,83 @@
+﻿{% extends "base.html" %}
+
+{% from 'bootstrap5/form.html' import render_form %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/event_details_style.css')}}" />
+{% endblock head %}
+
+<body class="body">
+    {% block content %}
+    <!-- Event Details -->
+    <div style="margin:50px 50px 50px 50px;">
+        <div class="container-fluid">
+            <h1 style="color:darkred; text-decoration: underline; ">{{event.artist}} performing live!</h1>
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <img src="{{event.img}}" style="width:100%; border: 5px solid black; border-radius: 10px" />
+                    <div class="container-fluid">
+                        <h2 style="color: darkred; text-decoration: underline;">Event Description</h2>
+                        <p>{{event.description}}</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h1 style="color: darkred; text-decoration: underline;">DETAILS</h1>
+                                <h2 style="color: darkred; text-decoration: underline;">Venue</h2>
+                                <p>
+                                    {{event.venue}}
+                                </p>
+                                <h2 style="color: darkred; text-decoration: underline;">Time</h2>
+                                <p>
+                                    {{event.time}}
+                                </p>
+                                <h2 style="color: darkred; text-decoration: underline;">Date</h2>
+                                <p>
+                                    {{event.date}}
+                                </p>
+                                <h2 style="color: darkred; text-decoration: underline;">Opening Bands</h2>
+                                <p>
+                                    Dog Pants Deluxe
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <h1 style="color: darkred; text-decoration: underline;">TICKETS</h1>
+                                <h2 style="color: darkred; text-decoration: underline;">Availability</h2>
+                                <p>
+                                    {{event.ticket_quantity}}
+                                </p>
+                                <h2 style="color: darkred; text-decoration: underline;">Price</h2>
+                                <p>
+                                    ${{event.ticket_price}}
+                                </p>
+
+                            </div>
+                            <a href="booking.html" style="background-color:darkred; text-align:center;
+                                color:white; font-size:40px; border-radius:10px;">BOOK TICKETS HERE!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comments -->
+            <div class="row" style="margin-bottom:50px;">
+                <div class="col-md-6 col-sm-12">
+                    <h2 style="color: darkred; text-decoration: underline; overflow:auto;">See What People Are Saying!</h2>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    {{render_form(form, "/events/{0}/comment".format(1))}}
+                    {% for comment in event.comments %}
+                    <div class="col-md-12">
+                        <b>{{comment.user.name}} <span class="ml-2 text-muted">{{comment.date}}</span></b>
+                        <p>{{comment.text}}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+    {% endblock content %}

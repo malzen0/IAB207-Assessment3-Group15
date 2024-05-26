@@ -22,14 +22,15 @@ class User(db.Model, UserMixin):
 class Event(db.Model):
     __tablename__ = 'events'
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80))
+    artist = db.Column(db.String(80))
     description = db.Column(db.String(200))
-    image = db.Column(db.String(400))
-    event_genre = db.Column(db.String(100))
-    event_location = db.Column(db.String(300))
-    event_date = db.Column(db.DateTime, default = datetime.date())
-    tickets = db.Column(db.Integer)
-    cost = db.Column(db.Float(20))
+    img = db.Column(db.String(400))
+    genre = db.Column(db.String(100))
+    venue = db.Column(db.String(300))
+    date = db.Column(db.DateTime, default = datetime.now())
+    time = db.Column(db.String(10))
+    ticket_quantity = db.Column(db.Integer)
+    ticket_price = db.Column(db.Float(20))
     
     
     comments = db.relationship('Comment', backref='event')
@@ -40,7 +41,7 @@ class Event(db.Model):
     
     # String print method
     def __repr__(self):
-        return f"Name: {self.name}"
+        return f"Artist: {self.artist}"
     
     
 #Event Status table 

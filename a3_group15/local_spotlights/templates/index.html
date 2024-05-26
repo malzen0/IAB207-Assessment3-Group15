@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='content/index_style.css') }}" />
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/index_style.css') }}" />
 {% endblock head %}
 
 <body class="body">
-    {% block content %}   <!-- The navigation menu -->
+{% block content %}   <!-- The navigation menu -->
     <div class="heading-container" style="background-image: url(static/img/image_1.png); min-height:300px">
         <div class="slogan">
             <p>Share Your Sound, Create a Night to Remember!</p>
@@ -15,7 +16,7 @@
         <h2 style="text-decoration: underline; text-align: center; margin-top: 10px;">
             What is Local Spotlights?
         </h2>
-        <p style="margin-left: 10px; margin-right: 10px;">
+        <p style="margin-left: 10px; margin-right: 10px; font-family: Azeret Mono">
             Are you an aspiring artist looking to share your sound? Maybe you're in a garage band ready to step out and
             into the world of live performance? Local Spotlights gives bands, singer-songwriters, and other musical performers big or small a perfect place
             to create and promote their own events. You can look for events based on your interests and location, or create your own!
@@ -27,183 +28,59 @@
     <div class="main-container" style="border-top-right-radius:10px;">
         <div class="wrapper">
             <div class="navbar">
-                <div style="font-size: 30px; background-color: none; color: white; margin-left: 20px;">FIND AN EVENT</div>
+                <div style="font-size: 30px; background-color: none; color: white; margin-left: 20px;">Browse Events :D</div>
                 <div class="subnav">
+                    <!-- <form method="get" action="{ url_for('event.show') }}"> -->
                     <button class="subnavbtn">Genre <i class="fa fa-caret-down"></i></button>
-
                     <div class="subnav-content">
-                        <label class="container">
-                            Rock
-                            <input type="checkbox" checked="checked">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="container">
-                            Metal
-                            <input type="checkbox" checked="checked">
-                            <span class="checkmark"></span>
-                        </label>
+                        <!-- ADD PROPER FILTERS USING THE FORMS -->
+                        {% for genre, genre_label in [('rock', 'Rock'), ('metal', 'Metal'), ('pop', 'Pop'),
+                        ('blues/jazz','Blues/Jazz'), ('country', 'Country'),('alternative','Alternative')] %}
 
                         <label class="container">
-                            Pop
-                            <input type="checkbox" checked="checked">
+                            {( genre_label )}
+                            <input type="checkbox" name="genres" value="{{genre }}" />
                             <span class="checkmark"></span>
                         </label>
-                        <label class="container">
-                            Blues/Jazz
-                            <input type="checkbox" checked="checked">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="container">
-                            Country
-                            <input type="checkbox" checked="checked">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="container">
-                            Alternative
-                            <input type="checkbox" checked="checked">
-                            <span class="checkmark"></span>
-                        </label>
+                        {% endfor %}
                     </div>
                 </div>
+
                 <div class="subnav">
                     <button class="subnavbtn">Location<i class="fa fa-caret-down"></i></button>
                     <div class="subnav-content">
                         <input type="text" placeholder="Location..">
-
                     </div>
                 </div>
+
                 <div class="subnav">
-                    <button class="subnavbtn">Date<i class="fa fa-caret-down"></i></button>
+                    <button type="button" class="subnavbtn">Date<i class="fa fa-caret-down"></i></button>
                     <div class="subnav-content">
                         <input type="date" placeholder="">
-
                     </div>
                 </div>
             </div>
+        </form>
+   </div>
 
-        </div>
-        <div class="event-wrapper">
-            <div class="gallery">
-                <img src="static/img/event_1.jpg" alt="man on stage">
-                <h2>George Random</h2>
-                <div class="price"><p> Fortitude Music Hall </p> </div>
-                <div class="price"><p> Genre: Rock </p> </div>
-                <div class="status"><p> STATUS: OPEN </p> </div>
-                <a class="details" href="event_details.html" target="_blank">View Details</a>
-            </div>
-            <div class="gallery">
-                <img src="static/img/event_2.jpg" alt="man on stage">
-                <h2>Fairy Fighters</h2>
-                <div class="price"><p> Fortitude Music Hall </p> </div>
-                <div class="price"><p> Genre: Rock </p> </div>
-                <div class="status"><p> STATUS: SOLD OUT </p> </div>
-                <a class="details" href="event_details.html" target="_blank">View Details</a>
-            </div>
-            <div class="gallery">
-                <img src="static/img/event_3.jpg" alt="man on stage">
-                <h2>Kittensica</h2>
-                <div class="price"><p> Fortitude Music Hall </p> </div>
-                <div class="price"><p> Genre: Rock </p> </div>
-                <div class="status"><p> STATUS: CANCELLED </p> </div>
-                <a class="details" href="event_details.html" target="_blank">View Details</a>
-            </div>
-            <div class="gallery">
-                <img src="static/img/event_4.jpg" alt="man on stage">
-                <h2>Tiny Division</h2>
-                <div class="price"><p> Fortitude Music Hall </p> </div>
-                <div class="price"><p> Genre: Rock </p> </div>
-                <div class="status"><p> STATUS: INACTIVE </p> </div>
-                <a class="details" href="event_details.html" target="_blank">View Details</a>
-            </div>
-            <div class="gallery">
-                <img src="static/img/event_5.jpg" alt="man on stage">
-                <h2>Megafairy</h2>
-                <div class="price"><p> Fortitude Music Hall </p> </div>
-                <div class="price"><p> Genre: Rock </p> </div>
-                <div class="status"><p> STATUS: OPEN </p> </div>
-                <a class="details" href="event_details.html" target="_blank">View Details</a>
-            </div>
-            <div class="gallery">
-                <img src="static/img/event_6.jpg" alt="man on stage">
-                <h2>S.T.U.N.N.I.N.G.</h2>
-                <div class="price"><p> Fortitude Music Hall </p> </div>
-                <div class="price"><p> Genre: Rock </p> </div>
-                <div class="status"><p> STATUS: OPEN </p> </div>
-                <a class="details" href="event_details.html">View Details</></a>
-            </div>
-            <div class="gallery">
-                <img src="static/img/event_7.jpg" alt="man on stage">
-                <h2>King Blond</h2>
-                <div class="price"><p> Fortitude Music Hall </p> </div>
-                <div class="price"><p> Genre: Rock </p> </div>
-                <div class="status"><p> STATUS: SOLD OUT </p> </div>
-                <a class="details" href="event_details.html" target="_blank">View Details</a>
-            </div>
-            <div class="gallery">
-                <img src="static/img/event_4.jpg" alt="man on stage">
-                <h2>Of Men and Spiders</h2>
-                <div class="price"><p> Fortitude Music Hall </p> </div>
-                <div class="price"><p> Genre: Rock </p> </div>
-                <div class="status"><p> STATUS: CANCELLED </p> </div>
-                <a class="details" href="event_details.html" target="_blank">View Details</a>
-            </div>
-            <div class="gallery">
-                <img src="static/img/event_5.jpg" alt="man on stage" style="width:100%">
-                <h2>Les Shoes</h2>
-                <div class="price"><p> Fortitude Music Hall </p> </div>
-                <div class="price"><p> Genre: Rock </p> </div>
-                <div class="status"><p> STATUS: SOLD OUT </p> </div>
-                <a class="details" href="event_details.html" target="_blank">View Details</a>
-            </div>
-            <div class="gallery">
-                <img src="static/img/event_2.jpg" alt="man on stage" style="width:100%">
-                <h2>Another Bright Autumn</h2>
-                <div class="price"><p> Fortitude Music Hall </p> </div>
-                <div class="price"><p> Genre: Rock </p> </div>
-                <div class="status"><p> STATUS: SOLD OUT </p> </div>
-                <a class="details" href="event_details.html" target="_blank">View Details</a>
-            </div>
-            <div class="gallery">
-                <img src="static/img/event_1.jpg" alt="man on stage" style="width:100%">
-                <h2>Master Of The Golf Course</h2>
-                <div class="price"><p> Fortitude Music Hall </p> </div>
-                <div class="price"><p> Genre: Rock </p> </div>
-                <div class="status"><p> STATUS: INACTIVE </p> </div>
-                <a class="details" href="event_details.html" target="_blank">View Details</a>
-            </div>
-            <div class="gallery">
-                <img src="static/img/event_6.jpg" alt="man on stage" style="width:100%">
-                <h2>Saving Maggie</h2>
-                <div class="price"><p> Fortitude Music Hall </p> </div>
-                <div class="price"><p> Genre: Rock </p> </div>
-                <div class="status"><p> STATUS: CANCELLED </p> </div>
-                <a class="details" href="event_details.html" target="_blank">View Details</a>
-            </div>
-            <div class="gallery">
-                <img src="static/img/event_7.jpg" alt="man on stage" style="width:100%">
-                <h2>Poorknot</h2>
-                <div class="price"><p> Fortitude Music Hall </p> </div>
-                <div class="price"><p> Genre: Rock </p> </div>
-                <div class="status"><p> STATUS: OPEN </p> </div>
-                <a class="details" href="event_details.html" target="_blank">View Details</a>
-            </div>
-            <div class="gallery">
-                <img src="static/img/event_3.jpg" alt="man on stage" style="width:100%">
-                <h2>The Loving Poor Jockies</h2>
-                <div class="price"><p> Fortitude Music Hall </p> </div>
-                <div class="price"><p> Genre: Rock </p> </div>
-                <div class="status"><p> STATUS: OPEN </p> </div>
-                <a class="details" href="event_details.html" target="_blank">View Details</a>
-            </div>
-            <div class="gallery">
-                <img src="static/img/event_6.jpg" alt="man on stage" style="width:100%">
-                <h2>Fishing Rod Attack</h2>
-                <div class="price"><p> Fortitude Music Hall </p> </div>
-                <div class="price"><p> Genre: Rock </p> </div>
-                <div class="status"><p> STATUS: OPEN </p> </div>
-                <a class="details" href="event_details.html" target="_blank">View Details</a>
+        <div class="container">
+            <div class="card-group">
+
+                <div class="row">
+                    {% for event in events %}
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card mx-3" style="border-radius:10px; height:500px;">
+                            <img class="card-img-top" src="{{event.img}}" alt="event image">
+                            <div class="card-body">
+                                <h5 class="card-title">{{event.artist}}</h5>
+                                <p class="card-text">{{event.description}}</p>
+                                <a href="{{url_for('event.show', id=event.id)}}" class="btn btn-danger">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
-    </div>
-    {% endblock content %}
+        {% endblock %}
 </body>

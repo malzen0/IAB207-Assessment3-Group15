@@ -8,30 +8,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=VT323&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&family=VT323&display=swap" rel="stylesheet">
 </head>
 {% endblock head %}
 
 <body>
     <div class="topnav" id="myTopnav">
         <a>LOCAL SPOTLIGHTS///</a>
-        <a href="{{ url_for('index') }}">HOME</a>
-        <a>LOGGED_IN_AS: CLAY</a>
-        <a href="{{ url_for('create_event') }}">CREATE_EVENT</a>
-        <a href="{{ url_for('booked_events')}}">BOOKED_EVENTS</a>
+        <a href="{{ url_for('main.index') }}">HOME</a>
+        <a>LOGGED_IN_AS: USER</a>
+        <a href="{{ url_for('event.create') }}">CREATE_EVENT</a>
+        <a href="#">BOOKED_EVENTS</a>
         <a href="javascript:void(0);" class="icon">
             <i class="fa fa-bars"></i>
         </a>
-        <img src="static/img/gif_1.gif" style="height: 70px; float: right; width: 70px">
+        <img src="{{ url_for('static', filename='img/gif_1.gif') }}" style="height: 70px; float: right; width: 70px">
     </div>
     
   
     {% block content %} {% endblock content %}
     <hr />
-    <footer>
-        <p>&copy; {{ year }} - My Flask Application</p>
+    <footer class="footer">
+        <p>&copy; {{ year }} - Local Spotlights Company Limited</p>
         <div class="footer">
-            <p>Footer</p>
+            <p>By purchasing a ticket through Local Spotlights, you are not just supporting the 
+            artist, you keep our website alive so we can keep the up-and-comers of the music industry afloat!
+            Also, no refunds! </p>
         </div>
     </footer>
  
