@@ -204,6 +204,7 @@ body {
     font-size: 40px;
     text-align: left;
     height: auto;
+    font-family: Pixelify Sans;
 }
 
 .main-container {
@@ -221,6 +222,7 @@ body {
     text-align: left;
     border-radius: 10px;
     text-decoration: underline;
+    font-family: Pixelify Sans;
 }
 
 .container-fluid {
@@ -229,6 +231,7 @@ body {
     height: auto;
     padding-bottom: 25px;
     margin-bottom: 0px;
+    font-family: Pixelify Sans;
 }
 
 .event-wrapper {

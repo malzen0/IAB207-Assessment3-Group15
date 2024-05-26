@@ -15,10 +15,10 @@
 <body>
     <div class="topnav" id="myTopnav">
         <a>LOCAL SPOTLIGHTS///</a>
-        <a href="{{ url_for('index') }}">HOME</a>
-        <a>LOGGED_IN_AS: CLAY</a>
-        <a href="{{ url_for('create_event') }}">CREATE_EVENT</a>
-        <a href="{{ url_for('booked_events')}}">BOOKED_EVENTS</a>
+        <a href="{{ url_for('main.index') }}">HOME</a>
+        <a>LOGGED_IN_AS: USER</a>
+        <a href="{{ url_for('event.create') }}">CREATE_EVENT</a>
+        <a href="#">BOOKED_EVENTS</a>
         <a href="javascript:void(0);" class="icon">
             <i class="fa fa-bars"></i>
         </a>
