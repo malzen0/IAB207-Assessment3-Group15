@@ -19,9 +19,15 @@
     <div class="topnav" id="myTopnav">
         <a>LOCAL SPOTLIGHTS///</a>
         <a href="{{ url_for('main.index') }}">HOME</a>
-        <a>LOGGED_IN_AS: USER</a>
+    {% if current_user.is_authenticated %}
+        <a>LOGGED_IN_AS: {{current_user.name}}</a>
         <a href="{{ url_for('event.create') }}">CREATE_EVENT</a>
         <a href="#">BOOKED_EVENTS</a>
+        <a href="{{ url_for('auth.logout') }}">LOG_OUT</a>
+    {% else %}
+        <a href="{{ url_for('auth.register') }}">REGISTER</a>
+        <a href="{{ url_for('auth.login') }}">LOG_IN</a>
+    {% endif %}
         <a href="javascript:void(0);" class="icon">
             <i class="fa fa-bars"></i>
         </a>
