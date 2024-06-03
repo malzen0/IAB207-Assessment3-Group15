@@ -19,6 +19,7 @@ def show(id):
 
 # Create event
 @eventbp.route('/create', methods = ['GET', 'POST'])
+@login_required
 def create():
     print('Method type: ', request.method)
     form = EventForm()
@@ -57,4 +58,27 @@ def check_file_upload(form):
     fp.save(upload_path)
     return db_upload_path
 
-# login 
+# Comments
+@eventbp.route('/<id>/comment', methods=['GET', 'POST'])
+@login_required
+def comment(id):
+    form = CommentForm()
+
+    # Get the event object associated with the page and comment
+    event = db.session.scalar(db.select(Event).where(Event.id == id))
+    
+    if not event:
+        abort(404)
+    
+    if form.validate_on_submit():
+        
+        # Read the comment from the form 
+        comment = Comment(text=form.comment.data, event=event, user=current_user)
+        db.session.add(comment)
+        db.session.commit()
+        
+        # Flash success when comment uploads
+        flash('Your comment has been added', 'success')
+    return redirect(url_for('event.show', id = id))
+            
+          
