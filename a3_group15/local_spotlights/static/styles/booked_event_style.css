@@ -10,7 +10,19 @@ body {
     overflow: hidden;
     margin-bottom: 20px;
 }
-
+/* Footer */
+.footer {
+    position: relative !important;
+    left: 0;
+    bottom: 0 !important;
+    width: 100% !important;
+    background-color: red;
+    height: auto !important;
+    color: white;
+    padding: 0px !important;
+    text-align: center;
+    margin-bottom: 0px !important;
+}
     .topnav a {
         float: left;
         display: block;

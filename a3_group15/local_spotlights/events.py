@@ -6,7 +6,19 @@ import os
 from werkzeug.utils import secure_filename
 from flask_login import login_required, current_user
 
-eventbp = Blueprint('event', __name__, url_prefix='/events')
+eventbp = Blueprint('event', __name__, url_prefix='/events', static_folder='static')
+
+# Filter genres
+@eventbp.route('/')
+def index():
+    genres = request.args.getlist('genres')
+    
+    if not genres:
+        events = db.session.query(Event).all()
+    else:
+        events = db.session.query(Event).filter(Event.genre.in_(genres)).all()
+    
+    return render_template('index.html', events=events, selected_genres=genres)
 
 # Event 
 @eventbp.route('/<id>')

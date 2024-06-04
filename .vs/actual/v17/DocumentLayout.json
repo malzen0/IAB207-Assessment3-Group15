@@ -130,12 +130,87 @@
               "RelativeToolTip": "a3_group15\\create_db.py",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2024-05-26T10:10:21.736Z",
+<<<<<<< HEAD
+              "WhenOpened": "2024-06-05T03:47:53.188Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "events.py",
+              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\events.py",
+              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\events.py",
+              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\events.py",
+              "RelativeToolTip": "a3_group15\\local_spotlights\\events.py",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2024-06-05T00:35:01.483Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "create_event.html",
+              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\events\\create_event.html",
+              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\templates\\events\\create_event.html",
+              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\events\\create_event.html",
+              "RelativeToolTip": "a3_group15\\local_spotlights\\templates\\events\\create_event.html",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-06-05T00:34:53.24Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "event_details.html",
+              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\events\\event_details.html",
+              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\templates\\events\\event_details.html",
+              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\events\\event_details.html",
+              "RelativeToolTip": "a3_group15\\local_spotlights\\templates\\events\\event_details.html",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAQAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-06-05T00:34:49.781Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "models.py",
+              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\models.py",
+              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\models.py",
+              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\models.py",
+              "RelativeToolTip": "a3_group15\\local_spotlights\\models.py",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2024-06-05T00:33:23.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "main.py",
+              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\main.py",
+              "RelativeDocumentMoniker": "a3_group15\\main.py",
+              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\main.py",
+              "RelativeToolTip": "a3_group15\\main.py",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2024-06-05T00:31:46.29Z"
+=======
+              "WhenOpened": "2024-05-26T10:10:21.736Z",
+              "EditorCaption": ""
+>>>>>>> parent of 705f7f6 (- Added genre filter functionality to index.html)
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+<<<<<<< HEAD
+              "Title": "forms.py",
+              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\forms.py",
+              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\forms.py",
+              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\forms.py",
+              "RelativeToolTip": "a3_group15\\local_spotlights\\forms.py",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAC4AAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2024-06-05T00:14:13.235Z"
+=======
               "Title": "index_style.css",
               "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\static\\styles\\index_style.css",
               "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\static\\styles\\index_style.css",
@@ -145,6 +220,7 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-05-26T07:43:39.175Z",
               "EditorCaption": ""
+>>>>>>> parent of 705f7f6 (- Added genre filter functionality to index.html)
             },
             {
               "$type": "Document",
@@ -156,8 +232,12 @@
               "RelativeToolTip": "a3_group15\\local_spotlights\\templates\\index.html",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAEoAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+<<<<<<< HEAD
+              "WhenOpened": "2024-06-05T00:13:50.566Z"
+=======
               "WhenOpened": "2024-05-26T04:56:58.418Z",
               "EditorCaption": ""
+>>>>>>> parent of 705f7f6 (- Added genre filter functionality to index.html)
             },
             {
               "$type": "Document",
@@ -260,6 +340,9 @@
               "RelativeToolTip": "a3_group15\\local_spotlights\\views.py",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+<<<<<<< HEAD
+              "WhenOpened": "2024-06-05T00:30:38.437Z"
+=======
               "WhenOpened": "2024-05-26T06:59:11.047Z",
               "EditorCaption": ""
             },
@@ -391,6 +474,7 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
               "WhenOpened": "2024-05-26T05:00:06.805Z",
               "EditorCaption": ""
+>>>>>>> parent of 705f7f6 (- Added genre filter functionality to index.html)
             }
           ]
         }

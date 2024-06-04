@@ -1,26 +1,24 @@
 {% extends "base.html" %}
 {% from "bootstrap5/form.html" import render_form %}
 {% block head %}
+{{super()}}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/index_style.css') }}" />
 {% endblock head %}
 {% block content %}
-
-
-<div class="page-header">
-    <h4>{{heading}}</h4>
+<div class="page-header" style="margin-left:50px; color: white; text-decoration:underline;">
+    <h4 style="font-size: 30px;">{{heading}}</h4>
 </div>
 
 
 <!-- Form rendering is simple and easy if using bootstrap -->
-<div class="col-md-6">
+<div class="col-md-6" style="margin-left: 50px; color:white; font-size: 25px;">
     {{render_form(form)}}
 </div>
 
 <!-- When you have login form, then do show the user a link to register -->
 {% if heading|lower =='login' %}
 <div class="col-md-4">
-    <p>New user? <a href="{{ url_for('auth.register') }}">Click here to register</a>.</p>
+    <h3 style="margin-left: 50px; color:white;">New user? <a style="font-size:25px;" href="{{ url_for('auth.register') }}">Click here to register</a>.</h3>
 </div>
 {% endif %}
-
 {% endblock %}

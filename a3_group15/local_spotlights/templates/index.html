@@ -28,7 +28,8 @@
     <div class="main-container" style="border-top-right-radius:10px;">
         <div class="wrapper">
             <div class="navbar">
-                <div style="font-size: 30px; background-color: none; color: white; margin-left: 20px;">Browse Events :D</div>
+                <div style="font-size: 30px; background-color: none; color: white; margin-left: 20px;">Browse Events</div>
+               <form method="get" action="{{ url_for('event.index')}}">
                 <div class="subnav">
                     <!-- <form method="get" action="{ url_for('event.show') }}"> -->
                     <button class="subnavbtn">Genre <i class="fa fa-caret-down"></i></button>
@@ -36,37 +37,35 @@
                         <!-- ADD PROPER FILTERS USING THE FORMS -->
                         {% for genre, genre_label in [('rock', 'Rock'), ('metal', 'Metal'), ('pop', 'Pop'),
                         ('blues/jazz','Blues/Jazz'), ('country', 'Country'),('alternative','Alternative')] %}
-
-                        <label class="container">
-                            {( genre_label )}
-                            <input type="checkbox" name="genres" value="{{genre }}" />
+                        <label class="container" style="padding-left:20px; padding-bottom: 2px; !important;">
+                            <input type="checkbox" name="genres" value="{{ genre }}"
+                            {% if genre in selected_genres %}checked{% endif %}
+                            onchange="this.form.submit()" />
+                            {{genre_label}}
                             <span class="checkmark"></span>
                         </label>
                         {% endfor %}
                     </div>
                 </div>
-
                 <div class="subnav">
                     <button class="subnavbtn">Location<i class="fa fa-caret-down"></i></button>
                     <div class="subnav-content">
-                        <input type="text" placeholder="Location..">
+                        <input type="text" name="location" placeholder="Location..." value="{{ location }}">
                     </div>
                 </div>
-
                 <div class="subnav">
                     <button type="button" class="subnavbtn">Date<i class="fa fa-caret-down"></i></button>
                     <div class="subnav-content">
                         <input type="date" placeholder="">
                     </div>
                 </div>
+               </form>
             </div>
-        </form>
    </div>
 
         <div class="container">
             <div class="card-group">
-
-                <div class="row">
+                <div id="event-container" class="row">
                     {% for event in events %}
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
                         <div class="card mx-3" style="border-radius:10px; height:500px;">
@@ -78,9 +77,19 @@
                             </div>
                         </div>
                     </div>
+
                     {% endfor %}
                 </div>
             </div>
         </div>
+    </div>
+    <script>
+        document.querySelectorAll('input[name="genres"]').forEach(function (checkbox) {
+            checkbox.addEventListener('change', function () {
+                this.form.submit();
+            });
+        });
+
+    </script>
         {% endblock %}
 </body>

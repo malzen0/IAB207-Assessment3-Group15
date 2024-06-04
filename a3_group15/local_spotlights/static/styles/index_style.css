@@ -165,18 +165,6 @@ body {
     display: block;
 }
 
-/* Footer */
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: red;
-    color: white;
-    text-align: center;
-}
-
-
 /*Containers, frames and boxes*/
 .event_text_box {
     background-color: pink;
@@ -314,15 +302,6 @@ body {
     font-family: Azeret Mono;
     color: darkred !important;
 }
-
-footer{
-    font-size: 20px;
-    height:70px;
-    break-after: auto;
-    padding-left:20px;
-    padding-right:20px;
-}
-
 
 a:hover, a:active {
     background-color: red;
