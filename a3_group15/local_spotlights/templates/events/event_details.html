@@ -6,7 +6,6 @@
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/event_details_style.css')}}" />
 {% endblock head %}
 
-<body class="body">
     {% block content %}
     <!-- Event Details -->
     <div style="margin:50px 50px 50px 50px;">
@@ -66,17 +65,19 @@
             <div class="row" style="margin-bottom:50px;">
                 <div class="col-md-6 col-sm-12">
                     <h2 style="color: darkred; text-decoration: underline; overflow:auto;">See What People Are Saying!</h2>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    {{render_form(form, "/events/{0}/comment".format(1))}}
-                    {% for comment in event.comments %}
-                    <div class="col-md-12">
-                        <b>{{comment.user.name}} <span class="ml-2 text-muted">{{comment.date}}</span></b>
-                        <p>{{comment.text}}</p>
+                    <div>
+                        {% for comment in event.comments %}
+                            <b>{{comment.user.name}} <span class="ml-2 text-muted">{{comment.date}}</span></b>
+                            <p>{{comment.text}}</p>
                         {% endfor %}
                     </div>
                 </div>
+                <div class="col-md-6 col-sm-12">
+                    {{render_form(form, url_for('event.comment', id=event.id))}}
+                </div>
             </div>
         </div>
+    </div>
     
+
 {% endblock %}
