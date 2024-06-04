@@ -47,6 +47,10 @@ def create_app():
    
    from . import events
    app.register_blueprint(events.eventbp)
+
+   from . import tickets
+   app.register_blueprint(tickets.ticketsbp)
+   
    
    # Create a dictionary of variable that are available 
    # to all html templates

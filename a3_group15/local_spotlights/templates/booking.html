@@ -1,81 +1,21 @@
 ﻿{% extends "base.html" %}
-<!DOCTYPE html>
-<html lang="en">
+{% from 'bootstrap5/form.html' import render_form %}
+
+
+{% block head %}
 <head>
     {{ super() }}
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/booking_style.css')}}" />
 </head>
-<body class="body">
-    <!--navbar from w3schools-->
-    {% block header %}
-    {% endblock %}
+{% endblock head %}
 
+<body class="body">
+    {% block content %}
+    
     <div class="row" style="margin: 0px 50px 0px 50px;">
         <div class="col-75">
             <div class="container">
-                <form action="/action_page.php">
-
-                    <div class="row">
-                        <div class="col-50">
-                            <h3 style="text-decoration:underline; color:darkred;">Billing Address</h3>
-                            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                            <input type="text" id="fname" name="firstname" placeholder="Clay Harvey">
-                            <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                            <input type="text" id="email" name="email" placeholder="clay.harvey@qut.edu.au">
-                            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-                            <input type="text" id="adr" name="address" placeholder="123 Fake St">
-                            <label for="city"><i class="fa fa-institution"></i> City</label>
-                            <input type="text" id="city" name="city" placeholder="Real City">
-
-                            <div class="row">
-                                <div class="col-50">
-                                    <label for="state">State</label>
-                                    <input type="text" id="state" name="state" placeholder="QLD">
-                                </div>
-                                <div class="col-50">
-                                    <label for="zip">Zip</label>
-                                    <input type="text" id="zip" name="zip" placeholder="4670">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-50">
-                            <h3 style="text-decoration: underline; color: darkred;">Payment</h3>
-                            <label for="fname">Accepted Cards</label>
-                            <div class="icon-container">
-                                <img src="static/img/paypal.png" class="icon" />
-                                <img src="static/img/visa.png" class="icon" />
-                                <img src="static/img/google-pay.png" class="icon" />
-                                <img src="static/img/direct-debit.png" class="icon" />
-                                <i class="fa fa-cc-amex" style="color:blue;"></i>
-                                <i class="fa fa-cc-mastercard" style="color:red;"></i>
-                                <i class="fa fa-cc-discover" style="color:orange;"></i>
-                            </div>
-                            <label for="cname">Name on Card</label>
-                            <input type="text" id="cname" name="cardname" placeholder="Mr Clay Harvey">
-                            <label for="ccnum">Credit card number</label>
-                            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-                            <label for="expmonth">Exp Month</label>
-                            <input type="text" id="expmonth" name="expmonth" placeholder="September">
-
-                            <div class="row">
-                                <div class="col-50">
-                                    <label for="expyear">Exp Year</label>
-                                    <input type="text" id="expyear" name="expyear" placeholder="2018">
-                                </div>
-                                <div class="col-50">
-                                    <label for="cvv">CVV</label>
-                                    <input type="text" id="cvv" name="cvv" placeholder="352">
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <label>
-                        <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
-                    </label>
-                    <div href="booked_events.html" class="btn">CONFIRM PAYMENT</div>
-                </form>
+                {{render_form(form)}}
             </div>
         </div>
 
@@ -95,6 +35,6 @@
             </div>
         </div>
     </div>
-
+    {% endblock content %}
 </body>
 </html>
