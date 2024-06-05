@@ -1,8 +1,10 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileAllowed, FileRequired
-from wtforms import DateField, TimeField, IntegerField, SelectField
-from wtforms.fields import TextAreaField,SubmitField, StringField, PasswordField, FileField, IntegerField, FloatField, TelField
+from wtforms import DateField, TimeField, IntegerField, SelectField, ValidationError 
+from wtforms.fields import TextAreaField,SubmitField, StringField, PasswordField, FileField, IntegerField, FloatField, TelField 
 from wtforms.validators import InputRequired, Length, Email, EqualTo, NumberRange
+from .models import Event
+from . import db
  
 ALLOWED_FILE = {'PNG', 'JPG', 'JPEG', 'png', 'jpg', 'jpeg'}
 
@@ -45,22 +47,29 @@ class EventForm(FlaskForm):
     description = TextAreaField("Description")
     img = FileField("Image", validators= [FileRequired(message='Image cannot be empty'), FileAllowed(ALLOWED_FILE, message='Only supports png, jpg, JPG, PNG')])
     submit = SubmitField("Create Event")
+    
 
 #This is the ticket booking form 
 class TicketBookingForm(FlaskForm):
-    full_name = StringField("Full Name", validators=[InputRequired()])
-    email = StringField("Email", validators=[InputRequired(), Email()])
+    full_name = StringField("Full Name", validators=[InputRequired("Please enter your full name")])
+    email = StringField("Email", validators=[Email("Please enter a valid email")])
     address = StringField("Address", validators=[InputRequired()])
     city = StringField("City", validators=[InputRequired()])
-    state = StringField("State", validators=[InputRequired()])
-    zip_code = StringField("Zip", validators=[InputRequired()])
+    state = SelectField("State", choices=[('QLD'),('NSW'),('VIC'),('TAS'),('ACT'),('SA'), ('WA'), ('NT')],validators=[InputRequired()])
+    post_code = StringField("Post Code", validators=[InputRequired()])
     # Payment information
     payment_method = SelectField("Payment Method", choices=[('card', 'Credit/Debit Card'), ('paypal', 'PayPal')], validators=[InputRequired()])
     name_on_card = StringField("Name on Card")
     credit_card_number = StringField("Credit Card Number")
-    expiration_month = SelectField("Expiration Month", choices=[('01', 'January'), ('02', 'February'), ..., ('12', 'December')], validators=[InputRequired()])
-    expiration_year = SelectField("Expiration Year", choices=[('2022', '2022'), ('2023', '2023'), ..., ('2030', '2030')], validators=[InputRequired()])
-    cvv = StringField("CVV")
+    expiration_month = SelectField("Expiration Month", choices=[('01'),('02'),('03'),('04'),('05'),('06'),('07'),('08'),('09'),('10'),('11'),('12')], validators=[InputRequired()])
+    expiration_year = IntegerField("Expiration Year", validators=[InputRequired(),NumberRange(min=2024, max=3000, message="Please input a valid year in the format of YYYY")])
+    cvv = IntegerField("CVV", validators=[InputRequired(),NumberRange(max=999, message="Please input a valid CVV")])
     quantity = IntegerField("Quantity", validators=[InputRequired(), NumberRange(min=1, message="Please select at least 1 ticket")])
     submit = SubmitField("COMFIRM PAYMENT")
+    
+    def validate_ticket_quantity(self,quantity):
+        tickets_available = db.session.query(Event.ticket_quantity)
+        if quantity > tickets_available:
+            raise ValidationError ('Not enough tickets available for your selected quantity, please select a different amount.')
+    
 
