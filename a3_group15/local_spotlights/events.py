@@ -13,25 +13,36 @@ eventbp = Blueprint('event', __name__, url_prefix='/events', static_folder='stat
 @eventbp.route('/')
 def index():
     genres = request.args.getlist('genres')
+    current_date = date.today()
+    base_query = db.session.query(Event, EventStatus.status).outerjoin(EventStatus, Event.id == EventStatus.event_id)
+
+    if genres:
+        base_query = base_query.filter(Event.genre.in_(genres))
     
-    if not genres:
-        events = db.session.query(Event).all()
-    else:
-        events = db.session.query(Event).filter(Event.genre.in_(genres)).all()
-    
+    events = base_query.all()
+    print("Initial event statuses: {events}")
+                  
+    for event in events:
+        print("Checking event {event.id} - {event.artist} with date {event.date} and status {event.status}")    
+        if event.date < current_date:
+            print(f"Updating status for event {event.id} - {event.artist} to 'inactive'")
+            db.session.query(EventStatus).filter_by(event_id=event.id).update({'status': 'inactive'})
+            db.session.commit()
+    events = base_query.all()
+
     return render_template('index.html', events=events, selected_genres=genres)
 
 # Event 
 @eventbp.route('/<id>')
 def show(id):
-    event = db.session.scalar(db.select(Event).where(Event.id==id))
+    event = db.session.scalar(db.select(Event).where(Event.id==id))        
     form = CommentForm()
     if not event:
         abort(404)  
     event_status = db.session.scalar(db.select(EventStatus).where(EventStatus.event_id == id))
-    print(event_status.status)
     if not event_status:
         abort(404)
+    
     return render_template('events/event_details.html', event=event, event_status=event_status, form=form) 
 
 # Create event
@@ -58,13 +69,12 @@ def create():
         
         #add the object to the database session 
         db.session.add(event)
-        # commit to the database
-        db.session.commit()
         flash('Succesfully created new event', 'success')
         
         #add event status
-        event_status = EventStatus(event_id=event.id,status="new",tickets_available=event.ticket_quantity)
+        event_status = EventStatus(event_id=event.id,status="Open",tickets_available=event.ticket_quantity)
         db.session.add(event_status)
+        # commit to the database
         db.session.commit()
 
         # redirect if form is valid
