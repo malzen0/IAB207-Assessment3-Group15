@@ -110,11 +110,17 @@ def comment(id):
 @eventbp.route('/<id>/cancel')
 def cancel(id):
     event = db.session.scalar(db.select(Event).where(Event.id == id))
-    if event:
-        event.status.status = 'Cancelled'
-        db.session.commit()
-        flash('Event has been cancelled', 'success')
+    #
+    # 
+    # 
     return redirect(url_for('event.show', id=id))
+
+# Booked events 
+@eventbp.route('/booked-events')
+def booked_events():
+    orders = db.session.query(Order).filter_by(user_id=current_user.id).all()
+    return render_template('events/booked_events.html')
+
 
 # Book event ticket
 @eventbp.route('/<id>/booking', methods = ['GET', 'POST'])
@@ -126,14 +132,10 @@ def booking(id):
     
     form = TicketBookingForm()
     if form.validate_on_submit():
-        order = Order(
-        ticket_quantity = form.quantity.data,
-        user_id = current_user,
-        event_id = event,)
+        order = Order(ticket_quantity = form.ticket_quantity.data, event=event, user=current_user)
         #add the object to the database session 
         db.session.add(order)
-        #event.ticket_quantity -= ticket_quantity
         db.session.commit()
         flash('Succesfully purchased tickets', 'success')
-        return redirect(url_for('booked_events.html'))
-    return render_template('booking.html', form=form, event=event)
+        return redirect(url_for('event.booked_events'))
+    return render_template('events/booking.html', form=form, event=event)

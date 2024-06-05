@@ -13,7 +13,7 @@ class User(db.Model, UserMixin):
     address = db.Column(db.String(100))
     comments = db.relationship('Comment', backref='user')
     events = db.relationship('Event', backref='user')
-    
+    order = db.relationship('Order', backref='user')
     # String print method 
     def __repr__(self):
         return f"Name: {self.name}"
@@ -37,6 +37,7 @@ class Event(db.Model):
     
     comments = db.relationship('Comment', backref='event')
     status = db.relationship('EventStatus', backref='event', uselist=False)
+    order = db.relationship('Order', backref="event")
     
     # foreign keys 
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
