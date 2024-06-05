@@ -52,6 +52,7 @@ class EventForm(FlaskForm):
 #This is the ticket booking form 
 class TicketBookingForm(FlaskForm):
     ticket_quantity = IntegerField("Ticket Quantity")
+    submit = SubmitField("Book Ticket")
     
     
     
