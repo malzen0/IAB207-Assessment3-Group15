@@ -66,7 +66,6 @@ class EventStatus(db.Model):
 class Order(db.Model):
     __tablename__ = 'orders'
     id = db.Column(db.Integer, primary_key=True)
-    ticket_type = db.Column(db.String(200))
     ticket_quantity = db.Column(db.Integer)
     order_date = db.Column(db.DateTime, default=datetime.now())
     
