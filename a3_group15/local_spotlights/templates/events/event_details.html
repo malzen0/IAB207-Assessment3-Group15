@@ -6,7 +6,6 @@
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/event_details_style.css')}}" />
 {% endblock head %}
 
-<body class="body">
     {% block content %}
     <!-- Event Details -->
     <div style="margin:50px 50px 50px 50px;">
@@ -29,17 +28,17 @@
                                 <h2 >Venue</h2>
                                 <h3>
                                     {{event.venue}}
-                                </h3>
-                                <h2>Time</h2>
-                                <h3>
+                                </p>
+                                <h2 style="color: darkred; text-decoration: underline;">Time</h2>
+                                <p>
                                     {{event.time}}
-                                </h3>
-                                <h2>Date</h2>
-                                <h3>
+                                </p>
+                                <h2 style="color: darkred; text-decoration: underline;">Date</h2>
+                                <p>
                                     {{event.date}}
-                                </h3>
-                                <h2>Opening Bands</h2>
-                                <h3>
+                                </p>
+                                <h2 style="color: darkred; text-decoration: underline;">Opening Bands</h2>
+                                <p>
                                     Dog Pants Deluxe
                                 </h3>
                             </div>
@@ -55,7 +54,7 @@
                                 </h3>
 
                             </div>
-                            <a href="booking.html" style="background-color:darkred; text-align:center;
+                            <a href="{{ url_for('event.booking', id=event.id) }}" style="background-color:darkred; text-align:center;
                                 color:white; font-size:40px; border-radius:10px;">BOOK TICKETS HERE!</a>
                         </div>
                     </div>
@@ -79,18 +78,20 @@
                     {{render_form(form, url_for('event.comment', id=event.id))}}
 =======
                     <h2 style="color: darkred; text-decoration: underline; overflow:auto;">See What People Are Saying!</h2>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    {{render_form(form, "/events/{0}/comment".format(1))}}
-                    {% for comment in event.comments %}
-                    <div class="col-md-12">
-                        <b>{{comment.user.name}} <span class="ml-2 text-muted">{{comment.date}}</span></b>
-                        <p>{{comment.text}}</p>
+                    <div>
+                        {% for comment in event.comments %}
+                            <b>{{comment.user.name}} <span class="ml-2 text-muted">{{comment.created_at.strftime('%d-%m-%Y %H:%M')}}</span></b>
+                            <p>{{comment.text}}</p>
                         {% endfor %}
                     </div>
 >>>>>>> parent of 705f7f6 (- Added genre filter functionality to index.html)
                 </div>
+                <div class="col-md-6 col-sm-12">
+                    {{render_form(form, url_for('event.comment', id=event.id))}}
+                </div>
             </div>
         </div>
+    </div>
     
+
 {% endblock %}
