@@ -64,19 +64,6 @@
             <!-- Comments -->
             <div class="row" style="margin-bottom:50px;">
                 <div class="col-md-6 col-sm-12">
-<<<<<<< HEAD
-                    <h1 style="color: darkred; text-decoration: underline;">
-                        See What People Are Saying!</h1>
-                        <div>
-                            {% for comment in event.comments %}
-                            <b>{{comment.user.name}} <span class="ml-2 text-muted">{{comment.date}}</span></b>
-                            <h3>{{comment.text}}</h3>
-                            {% endfor %}
-                        </div>
-</div>
-                <div class="col-md-6 col-sm-12">
-                    {{render_form(form, url_for('event.comment', id=event.id))}}
-=======
                     <h2 style="color: darkred; text-decoration: underline; overflow:auto;">See What People Are Saying!</h2>
                     <div>
                         {% for comment in event.comments %}
@@ -84,7 +71,6 @@
                             <p>{{comment.text}}</p>
                         {% endfor %}
                     </div>
->>>>>>> parent of 705f7f6 (- Added genre filter functionality to index.html)
                 </div>
                 <div class="col-md-6 col-sm-12">
                     {{render_form(form, url_for('event.comment', id=event.id))}}
