@@ -40,6 +40,7 @@ def register():
         user_name = register_form.user_name.data
         email_id = register_form.email_id.data
         mobile_num = register_form.mobile_num.data
+        address = register_form.address.data
         password = register_form.password.data
         
         # Check if the username already exists 
@@ -48,7 +49,8 @@ def register():
             # Create a new user 
             new_user = User(name=user_name, 
                             email_id=email_id, 
-                            mobile_num=mobile_num, 
+                            mobile_num=mobile_num,
+                            address=address, 
                             password_hash=generate_password_hash(password))
             db.session.add(new_user)
             db.session.commit()

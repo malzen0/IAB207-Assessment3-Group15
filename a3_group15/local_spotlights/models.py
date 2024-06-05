@@ -10,6 +10,7 @@ class User(db.Model, UserMixin):
     email_id = db.Column(db.String(100), index=True, nullable=False)
     password_hash = db.Column(db.String(255), nullable=False)
     mobile_num = db.Column(db.String(20))
+    address = db.Column(db.String(100))
     comments = db.relationship('Comment', backref='user')
     events = db.relationship('Event', backref='user')
     
