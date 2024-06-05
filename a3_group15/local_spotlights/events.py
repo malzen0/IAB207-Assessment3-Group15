@@ -1,10 +1,11 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash, abort
-from .models import Event, EventStatus, Comment
-from .forms import EventForm, CommentForm
+from .models import Event, EventStatus, Comment, Order
+from .forms import EventForm, CommentForm, TicketBookingForm
 from . import db
 import os
 from werkzeug.utils import secure_filename
 from flask_login import login_required, current_user
+from datetime import datetime, date, time
 
 eventbp = Blueprint('event', __name__, url_prefix='/events', static_folder='static')
 
@@ -26,7 +27,8 @@ def show(id):
     event = db.session.scalar(db.select(Event).where(Event.id==id))
     form = CommentForm()
     if not event:
-        abort(404)
+        abort(404)  
+    
     return render_template('events/event_details.html', event=event, form=form) 
 
 # Create event
@@ -42,30 +44,41 @@ def create():
             artist = form.artist.data,
             genre = form.genre.data,
             venue = form.venue.data,
+            start_time = form.start_time.data,
+            end_time = form.end_time.data,
             date = form.date.data,
             ticket_quantity = form.ticket_quantity.data,
             ticket_price = form.ticket_price.data,
             description = form.description.data, 
-            img = db_file_path)
+            img = db_file_path,
+            )
+        
         #add the object to the database session 
         db.session.add(event)
+        
         # commit to the database
         db.session.commit()
         flash('Succesfully created new event', 'success')
+        
         # redirect if form is valid
-        return redirect(url_for('event.create'))
+        return redirect(url_for('main.index'))
+    
     return render_template('events/create_event.html', form=form)
 
 # File upload 
 def check_file_upload(form):
+    
     # get file data from form 
     fp = form.img.data
     filename = fp.filename
+    
     # Get current path of module file and store image file relative to the path 
     BASE_PATH = os.path.dirname(__file__)
+    
     # Upload the file location 
     upload_path = os.path.join(BASE_PATH, 'static/img', secure_filename(filename))
     db_upload_path = '/static/img/' + secure_filename(filename)
+    
     # Save the file and return path 
     fp.save(upload_path)
     return db_upload_path
@@ -93,4 +106,34 @@ def comment(id):
         flash('Your comment has been added', 'success')
     return redirect(url_for('event.show', id = id))
             
-          
+# Cancel the event
+@eventbp.route('/<id>/cancel')
+def cancel(id):
+    event = db.session.scalar(db.select(Event).where(Event.id == id))
+    if event:
+        event.status.status = 'Cancelled'
+        db.session.commit()
+        flash('Event has been cancelled', 'success')
+    return redirect(url_for('event.show', id=id))
+
+# Book event ticket
+@eventbp.route('/<id>/booking', methods = ['GET', 'POST'])
+@login_required
+def booking(id):
+    event = db.session.scalar(db.select(Event).where(Event.id == id))
+    if not event:
+        abort(404)
+    
+    form = TicketBookingForm()
+    if form.validate_on_submit():
+        order = Order(
+        ticket_quantity = form.quantity.data,
+        user_id = current_user,
+        event_id = event,)
+        #add the object to the database session 
+        db.session.add(order)
+        #event.ticket_quantity -= ticket_quantity
+        db.session.commit()
+        flash('Succesfully purchased tickets', 'success')
+        return redirect(url_for('booked_events.html'))
+    return render_template('booking.html', form=form, event=event)

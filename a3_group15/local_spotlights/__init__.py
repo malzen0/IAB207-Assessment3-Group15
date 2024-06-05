@@ -47,7 +47,7 @@ def create_app():
    
    from . import events
    app.register_blueprint(events.eventbp)
-   
+
    # Create a dictionary of variable that are available 
    # to all html templates
    @app.context_processor
