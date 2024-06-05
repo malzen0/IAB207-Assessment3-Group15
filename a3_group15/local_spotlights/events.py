@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash, abort
-from .models import Event, EventStatus, Comment
-from .forms import EventForm, CommentForm
+from .models import Event, EventStatus, Comment, Order
+from .forms import EventForm, CommentForm, TicketBookingForm
 from . import db
 import os
 from werkzeug.utils import secure_filename
@@ -49,7 +49,7 @@ def create():
         flash('Succesfully created new event', 'success')
         
         # redirect if form is valid
-        return redirect(url_for('event.create'))
+        return redirect(url_for('main.index'))
     
     return render_template('events/create_event.html', form=form)
 
@@ -103,3 +103,25 @@ def cancel(id):
         db.session.commit()
         flash('Event has been cancelled', 'success')
     return redirect(url_for('event.show', id=id))
+
+# Book event ticket
+@eventbp.route('/<id>/booking', methods = ['GET', 'POST'])
+@login_required
+def booking(id):
+    event = db.session.scalar(db.select(Event).where(Event.id == id))
+    if not event:
+        abort(404)
+    
+    form = TicketBookingForm()
+    if form.validate_on_submit():
+        order = Order(
+        ticket_quantity = form.quantity.data,
+        user_id = current_user,
+        event_id = event,)
+        #add the object to the database session 
+        db.session.add(order)
+        #event.ticket_quantity -= ticket_quantity
+        db.session.commit()
+        flash('Succesfully purchased tickets', 'success')
+        return redirect(url_for('booked_events.html'))
+    return render_template('booking.html', form=form, event=event)
