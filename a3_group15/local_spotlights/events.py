@@ -28,8 +28,11 @@ def show(id):
     form = CommentForm()
     if not event:
         abort(404)  
-    
-    return render_template('events/event_details.html', event=event, form=form) 
+    event_status = db.session.scalar(db.select(EventStatus).where(EventStatus.event_id == id))
+    print(event_status.status)
+    if not event_status:
+        abort(404)
+    return render_template('events/event_details.html', event=event, event_status=event_status, form=form) 
 
 # Create event
 @eventbp.route('/create', methods = ['GET', 'POST'])
@@ -55,11 +58,15 @@ def create():
         
         #add the object to the database session 
         db.session.add(event)
-        
         # commit to the database
         db.session.commit()
         flash('Succesfully created new event', 'success')
         
+        #add event status
+        event_status = EventStatus(event_id=event.id,status="new",tickets_available=event.ticket_quantity)
+        db.session.add(event_status)
+        db.session.commit()
+
         # redirect if form is valid
         return redirect(url_for('main.index'))
     
@@ -128,15 +135,29 @@ def booked_events():
 @login_required
 def booking(id):
     event = db.session.scalar(db.select(Event).where(Event.id == id))
+    print(event.artist)
     if not event:
         abort(404)
-    
-    form = TicketBookingForm()
+
+    event_status = db.session.scalar(db.select(EventStatus).where(EventStatus.event_id == id))
+    print(event_status.status)
+    if not event_status:
+        abort(404)
+
+    form = TicketBookingForm(event_id=id)
     if form.validate_on_submit():
-        order = Order(ticket_quantity = form.ticket_quantity.data, event=event, user=current_user)
-        #add the object to the database session 
-        db.session.add(order)
-        db.session.commit()
-        flash('Succesfully purchased tickets', 'success')
-        return redirect(url_for('event.booked_events'))
+        if form.ticket_quantity.data > event_status.tickets_available:
+            flash('The number of tickets requested exceeds the available tickets.', 'danger')
+        else:
+            order = Order(ticket_quantity = form.ticket_quantity.data, event=event, user=current_user)
+            #add the object to the database session 
+            print(f'Before: {event_status.tickets_available}')
+            event_status.tickets_available -= form.ticket_quantity.data
+            if event_status.tickets_available == 0:
+                event_status.status= "Sold Out"
+            print(f'After: {event_status.tickets_available}')
+            db.session.add(order)
+            db.session.commit()
+            flash('Succesfully purchased tickets', 'success')
+            return redirect(url_for('event.booked_events'))
     return render_template('events/booking.html', form=form, event=event)

@@ -41,7 +41,6 @@ class Event(db.Model):
     
     # foreign keys 
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    status_id = db.Column(db.Integer, db.ForeignKey('eventstatus.id'))
     
     
     # String print method
@@ -57,7 +56,8 @@ class EventStatus(db.Model):
     tickets_available = db.Column(db.Integer)
     status_date = db.Column(db.DateTime, default = datetime.now())
     
-    
+    event_id = db.Column(db.Integer, db.ForeignKey('events.id'))
+
     #String print method
     def __repr__(self):
         return f"Status: {self.status}"

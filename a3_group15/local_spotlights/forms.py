@@ -3,7 +3,7 @@ from flask_wtf.file import FileAllowed, FileRequired
 from wtforms import DateField, TimeField, IntegerField, SelectField, ValidationError 
 from wtforms.fields import TextAreaField,SubmitField, StringField, PasswordField, FileField, IntegerField, FloatField, TelField 
 from wtforms.validators import InputRequired, Length, Email, EqualTo, NumberRange
-from .models import Event
+from .models import EventStatus
 from . import db
  
 ALLOWED_FILE = {'PNG', 'JPG', 'JPEG', 'png', 'jpg', 'jpeg'}
@@ -53,6 +53,3 @@ class EventForm(FlaskForm):
 class TicketBookingForm(FlaskForm):
     ticket_quantity = IntegerField("Ticket Quantity")
     submit = SubmitField("Book Ticket")
-    
-    
-    
