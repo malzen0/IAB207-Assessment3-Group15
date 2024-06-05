@@ -15,11 +15,14 @@
     <div class="row" style="margin: 0px 50px 0px 50px;">
         <div class="col-75">
             <div class="container">
+                <h1>Purchasing tickets for: {{event.artist}}</h1>
+                <h4>Date: {{event.date}}</h4>
+                <h4>Ticket Price: ${{event.ticket_price}}</h4>
                 {{render_form(form)}}
             </div>
         </div>
 
-        <div class="col-25">
+        <!-- <div class="col-25">
             <div class="container">
                 <h3 style="color:darkred; text-decoration:underline;">
                     Tickets
@@ -33,7 +36,7 @@
                 <hr>
                 <p>Total <span class="price" style="color:black"><b>$--</b></span></p>
             </div>
-        </div>
+        </div> -->
     </div>
     {% endblock content %}
 </body>
