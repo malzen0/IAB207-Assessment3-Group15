@@ -31,11 +31,11 @@
                                 </p>
                                 <h2 style="color: darkred; text-decoration: underline;">Time</h2>
                                 <p>
-                                    {{event.time}}
+                                    {{event.start_time.strftime('%H:%M')}} - {{event.end_time.strftime('%H:%M')}}
                                 </p>
                                 <h2 style="color: darkred; text-decoration: underline;">Date</h2>
                                 <p>
-                                    {{event.date}}
+                                    {{event.date.strftime('%d-%m-%Y')}}
                                 </p>
                                 <h2 style="color: darkred; text-decoration: underline;">Opening Bands</h2>
                                 <p>

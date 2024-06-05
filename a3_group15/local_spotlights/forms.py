@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileAllowed, FileRequired
-from wtforms import DateField, IntegerField, SelectField
+from wtforms import DateField, TimeField, IntegerField, SelectField
 from wtforms.fields import TextAreaField,SubmitField, StringField, PasswordField, FileField, IntegerField, FloatField
 from wtforms.validators import InputRequired, Length, Email, EqualTo, NumberRange
  
@@ -36,7 +36,8 @@ class EventForm(FlaskForm):
     artist = StringField("Artist")
     genre = SelectField("Genre", choices=[('rock', 'Rock'), ('metal', 'Metal'), ('pop', 'Pop'), ('blues/jazz', 'Blues/Jazz'), ('country', 'Country'), ('alternative', 'Alternative')])
     venue = StringField("Venue")
-    time = StringField("Time")
+    start_time = TimeField("Start Time")
+    end_time = TimeField("End Time")
     date = DateField("Date")
     ticket_quantity = IntegerField("Ticket Quantity")
     ticket_price = FloatField("Ticket Price")

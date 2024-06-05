@@ -1,5 +1,5 @@
 from . import db
-from datetime import datetime
+from datetime import datetime, date, time
 from flask_login import UserMixin
 
 # User Table
@@ -27,23 +27,26 @@ class Event(db.Model):
     img = db.Column(db.String(400))
     genre = db.Column(db.String(100))
     venue = db.Column(db.String(300))
-    date = db.Column(db.DateTime, default = datetime.now())
-    time = db.Column(db.String(10))
+    date = db.Column(db.Date)
+    start_time = db.Column(db.Time)
+    end_time = db.Column(db.Time)
     ticket_quantity = db.Column(db.Integer)
     ticket_price = db.Column(db.Float(20))
-    
+
     
     comments = db.relationship('Comment', backref='event')
+    status = db.relationship('EventStatus', backref='event', uselist=False)
     
     # foreign keys 
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     status_id = db.Column(db.Integer, db.ForeignKey('eventstatus.id'))
     
+    
     # String print method
     def __repr__(self):
         return f"Artist: {self.artist}"
     
-    
+                
 #Event Status table 
 class EventStatus(db.Model):
     __tablename__ = 'eventstatus'
