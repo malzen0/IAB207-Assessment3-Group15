@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileAllowed, FileRequired
-from wtforms import DateField, IntegerField, SelectField
-from wtforms.fields import TextAreaField,SubmitField, StringField, PasswordField, FileField, IntegerField, FloatField
+from wtforms import DateField, TimeField, IntegerField, SelectField
+from wtforms.fields import TextAreaField,SubmitField, StringField, PasswordField, FileField, IntegerField, FloatField, TelField
 from wtforms.validators import InputRequired, Length, Email, EqualTo, NumberRange
  
 ALLOWED_FILE = {'PNG', 'JPG', 'JPEG', 'png', 'jpg', 'jpeg'}
@@ -16,7 +16,8 @@ class LoginForm(FlaskForm):
 class RegisterForm(FlaskForm):
     user_name=StringField("User Name", validators=[InputRequired()])
     email_id = StringField("Email Address", validators=[Email("Please enter a valid email")])
-    mobile_num = StringField("Mobile Number", validators=[InputRequired()])
+    mobile_num = TelField("Mobile Number", validators=[InputRequired()])
+    address = StringField("Address", validators=[InputRequired()])
     #linking two fields - password should be equal to data entered in confirm
     password=PasswordField("Password", validators=[InputRequired(),
                   EqualTo('confirm', message="Passwords should match")])
@@ -36,7 +37,8 @@ class EventForm(FlaskForm):
     artist = StringField("Artist")
     genre = SelectField("Genre", choices=[('rock', 'Rock'), ('metal', 'Metal'), ('pop', 'Pop'), ('blues/jazz', 'Blues/Jazz'), ('country', 'Country'), ('alternative', 'Alternative')])
     venue = StringField("Venue")
-    time = StringField("Time")
+    start_time = TimeField("Start Time")
+    end_time = TimeField("End Time")
     date = DateField("Date")
     ticket_quantity = IntegerField("Ticket Quantity")
     ticket_price = FloatField("Ticket Price")
