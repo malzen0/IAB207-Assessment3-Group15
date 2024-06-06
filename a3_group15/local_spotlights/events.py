@@ -13,14 +13,11 @@ eventbp = Blueprint('event', __name__, url_prefix='/events', static_folder='stat
 @eventbp.route('/')
 def index():
     update_db()
-    print("updatedb compelted")
     genres = request.args.getlist('genres')
-    print(f"Selected genres: {genres}")
     if not genres:
         events = db.session.query(Event).join(EventStatus).filter(EventStatus.status != 'Inactive').all()
     else:
         events = db.session.query(Event).join(EventStatus).filter(EventStatus.status != 'Inactive', Event.genre.in_(genres)).all()
-    
     return render_template('index.html', events=events, selected_genres=genres)
 
 def update_db():
@@ -76,6 +73,7 @@ def create():
         
         #add the object to the database session 
         db.session.add(event)
+        db.session.commit()
         flash('Succesfully created new event', 'success')
         
         #add event status
