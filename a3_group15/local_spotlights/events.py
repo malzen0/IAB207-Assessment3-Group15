@@ -17,10 +17,9 @@ def index():
     genres = request.args.getlist('genres')
     print(f"Selected genres: {genres}")
     if not genres:
-        
-        events = db.session.query(Event).all() 
+        events = db.session.query(Event).join(EventStatus).filter(EventStatus.status != 'Inactive').all()
     else:
-        events = db.session.query(Event).filter(Event.genre.in_(genres)).all()
+        events = db.session.query(Event).join(EventStatus).filter(EventStatus.status != 'Inactive', Event.genre.in_(genres)).all()
     
     return render_template('index.html', events=events, selected_genres=genres)
 
