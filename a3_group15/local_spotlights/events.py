@@ -1,3 +1,4 @@
+from multiprocessing import Value
 from flask import Blueprint, render_template, request, redirect, url_for, flash, abort
 from .models import Event, EventStatus, Comment, Order
 from .forms import EventForm, CommentForm, TicketBookingForm
@@ -5,20 +6,40 @@ from . import db
 import os
 from werkzeug.utils import secure_filename
 from flask_login import login_required, current_user
-from datetime import datetime, date, time
+from datetime import datetime, date, time, timedelta
+from sqlalchemy import or_
 
 eventbp = Blueprint('event', __name__, url_prefix='/events', static_folder='static')
 
-# Filter genres
+# Filter functions
 @eventbp.route('/')
 def index():
     update_db()
     genres = request.args.getlist('genres')
-    if not genres:
-        events = db.session.query(Event).join(EventStatus).filter(EventStatus.status != 'Inactive').all()
-    else:
-        events = db.session.query(Event).join(EventStatus).filter(EventStatus.status != 'Inactive', Event.genre.in_(genres)).all()
-    return render_template('index.html', events=events, selected_genres=genres)
+    location = request.args.get('location','')
+    date = request.args.get('date','')
+    
+    query = db.session.query(Event)
+
+    if genres:
+        query=query.filter(Event.genre.in_(genres))
+        
+    if location:
+        location_filter = f"%{location}%"
+        query = query.filter(
+            or_(Event.venue.ilike(location_filter)))
+
+    if date:
+        try: 
+            date_actual = datetime.strptime(date, '%Y-%m-%d')
+            date_range_start = date_actual - timedelta(days=30)
+            date_range_end = date_actual + timedelta(days=30)
+            query = query.filter(Event.date.between(date_range_start,date_range_end))
+            ## Exception handling
+        except ValueError:
+            pass
+    
+    return render_template('index.html', query.all, selected_genres=genres, location = location, date=date)
 
 def update_db():
     current_date = date.today()

@@ -3,88 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\choch\\source\\repos\\actual\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\events\\create_event.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\templates\\events\\create_event.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\main.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\main.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\templates\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\static\\styles\\index_style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\static\\styles\\index_style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\base.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\templates\\base.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\static\\styles\\create_event_style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\static\\styles\\create_event_style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\views.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\views.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\models.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\models.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\main.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\main.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\events.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\events.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\forms.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\forms.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\create_db.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\create_db.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\booked_events.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\templates\\booked_events.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\booking.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\templates\\booking.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\auth.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\auth.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\user.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\templates\\user.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\static\\styles\\event_details_style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\static\\styles\\event_details_style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\events\\event_details.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\templates\\events\\event_details.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\static\\styles\\booked_event_style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\static\\styles\\booked_event_style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\events\\create_event.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\templates\\events\\create_event.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\static\\styles\\booking_style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\static\\styles\\booking_style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\create_db.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\create_db.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\static\\img\\gif_1.gif||{58961B49-13E0-48C0-9258-13CBC4D40279}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\static\\img\\gif_1.gif||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\forms.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\forms.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\models.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\models.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\views.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:a3_group15\\local_spotlights\\views.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -94,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -103,10 +55,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Bookmark",
@@ -122,57 +70,85 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "create_db.py",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\create_db.py",
-              "RelativeDocumentMoniker": "a3_group15\\create_db.py",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\create_db.py",
-              "RelativeToolTip": "a3_group15\\create_db.py",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-<<<<<<< HEAD
-              "WhenOpened": "2024-06-05T03:47:53.188Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "events.py",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\events.py",
-              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\events.py",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\events.py",
-              "RelativeToolTip": "a3_group15\\local_spotlights\\events.py",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2024-06-05T00:35:01.483Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "create_event.html",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\events\\create_event.html",
-              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\templates\\events\\create_event.html",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\events\\create_event.html",
-              "RelativeToolTip": "a3_group15\\local_spotlights\\templates\\events\\create_event.html",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-06-05T00:34:53.24Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "event_details.html",
               "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\events\\event_details.html",
               "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\templates\\events\\event_details.html",
               "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\events\\event_details.html",
               "RelativeToolTip": "a3_group15\\local_spotlights\\templates\\events\\event_details.html",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAQAAAARAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAADgAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2024-06-05T00:34:49.781Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
+              "Title": "main.py",
+              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\main.py",
+              "RelativeDocumentMoniker": "a3_group15\\main.py",
+              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\main.py",
+              "RelativeToolTip": "a3_group15\\main.py",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2024-06-05T00:31:46.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\index.html",
+              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\templates\\index.html",
+              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\index.html",
+              "RelativeToolTip": "a3_group15\\local_spotlights\\templates\\index.html",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAAFQAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-06-05T00:13:50.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "create_event.html",
+              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\events\\create_event.html",
+              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\templates\\events\\create_event.html",
+              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\events\\create_event.html",
+              "RelativeToolTip": "a3_group15\\local_spotlights\\templates\\events\\create_event.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-06-05T00:34:53.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "events.py",
+              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\events.py",
+              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\events.py",
+              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\events.py",
+              "RelativeToolTip": "a3_group15\\local_spotlights\\events.py",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAAACUAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2024-06-05T00:35:01.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "forms.py",
+              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\forms.py",
+              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\forms.py",
+              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\forms.py",
+              "RelativeToolTip": "a3_group15\\local_spotlights\\forms.py",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAC4AAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2024-06-05T00:14:13.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "models.py",
               "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\models.py",
               "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\models.py",
@@ -184,297 +160,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "main.py",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\main.py",
-              "RelativeDocumentMoniker": "a3_group15\\main.py",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\main.py",
-              "RelativeToolTip": "a3_group15\\main.py",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAXAAAA",
+              "DocumentIndex": 5,
+              "Title": "create_db.py",
+              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\create_db.py",
+              "RelativeDocumentMoniker": "a3_group15\\create_db.py",
+              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\create_db.py",
+              "RelativeToolTip": "a3_group15\\create_db.py",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2024-06-05T00:31:46.29Z"
-=======
-              "WhenOpened": "2024-05-26T10:10:21.736Z",
+              "WhenOpened": "2024-06-05T03:47:53.188Z",
               "EditorCaption": ""
->>>>>>> parent of 705f7f6 (- Added genre filter functionality to index.html)
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-<<<<<<< HEAD
-              "Title": "forms.py",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\forms.py",
-              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\forms.py",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\forms.py",
-              "RelativeToolTip": "a3_group15\\local_spotlights\\forms.py",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAC4AAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2024-06-05T00:14:13.235Z"
-=======
-              "Title": "index_style.css",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\static\\styles\\index_style.css",
-              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\static\\styles\\index_style.css",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\static\\styles\\index_style.css",
-              "RelativeToolTip": "a3_group15\\local_spotlights\\static\\styles\\index_style.css",
-              "ViewState": "AQIAANoAAAAAAAAAAAAAAOsAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-05-26T07:43:39.175Z",
-              "EditorCaption": ""
->>>>>>> parent of 705f7f6 (- Added genre filter functionality to index.html)
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "index.html",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\index.html",
-              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\templates\\index.html",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\index.html",
-              "RelativeToolTip": "a3_group15\\local_spotlights\\templates\\index.html",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEoAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-<<<<<<< HEAD
-              "WhenOpened": "2024-06-05T00:13:50.566Z"
-=======
-              "WhenOpened": "2024-05-26T04:56:58.418Z",
-              "EditorCaption": ""
->>>>>>> parent of 705f7f6 (- Added genre filter functionality to index.html)
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "events.py",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\events.py",
-              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\events.py",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\events.py",
-              "RelativeToolTip": "a3_group15\\local_spotlights\\events.py",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2024-05-26T07:36:57.86Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "create_event.html",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\events\\create_event.html",
-              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\templates\\events\\create_event.html",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\events\\create_event.html",
-              "RelativeToolTip": "a3_group15\\local_spotlights\\templates\\events\\create_event.html",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-05-26T04:58:46.625Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "base.html",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\base.html",
-              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\templates\\base.html",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\base.html",
-              "RelativeToolTip": "a3_group15\\local_spotlights\\templates\\base.html",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAACMAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-05-26T04:56:47.928Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "create_event_style.css",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\static\\styles\\create_event_style.css",
-              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\static\\styles\\create_event_style.css",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\static\\styles\\create_event_style.css",
-              "RelativeToolTip": "a3_group15\\local_spotlights\\static\\styles\\create_event_style.css",
-              "ViewState": "AQIAAGsAAAAAAAAAAAAwwI0AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-05-26T04:51:24.13Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "booked_events.html",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\booked_events.html",
-              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\templates\\booked_events.html",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\booked_events.html",
-              "RelativeToolTip": "a3_group15\\local_spotlights\\templates\\booked_events.html",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB4AAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-05-26T05:39:51.944Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "forms.py",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\forms.py",
-              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\forms.py",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\forms.py",
-              "RelativeToolTip": "a3_group15\\local_spotlights\\forms.py",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC0AAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2024-05-26T05:24:01.582Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "main.py",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\main.py",
-              "RelativeDocumentMoniker": "a3_group15\\main.py",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\main.py",
-              "RelativeToolTip": "a3_group15\\main.py",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2024-05-26T04:43:10.612Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "views.py",
               "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\views.py",
               "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\views.py",
               "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\views.py",
               "RelativeToolTip": "a3_group15\\local_spotlights\\views.py",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAADAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-<<<<<<< HEAD
               "WhenOpened": "2024-06-05T00:30:38.437Z"
-=======
-              "WhenOpened": "2024-05-26T06:59:11.047Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "models.py",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\models.py",
-              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\models.py",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\models.py",
-              "RelativeToolTip": "a3_group15\\local_spotlights\\models.py",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAACsAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2024-05-26T07:00:21.545Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "booking.html",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\booking.html",
-              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\templates\\booking.html",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\booking.html",
-              "RelativeToolTip": "a3_group15\\local_spotlights\\templates\\booking.html",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-05-26T07:05:40.281Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "auth.py",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\auth.py",
-              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\auth.py",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\auth.py",
-              "RelativeToolTip": "a3_group15\\local_spotlights\\auth.py",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2024-05-26T07:20:36.676Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "__init__.py",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\__init__.py",
-              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\__init__.py",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\__init__.py",
-              "RelativeToolTip": "a3_group15\\local_spotlights\\__init__.py",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2024-05-26T07:06:47.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "user.html",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\user.html",
-              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\templates\\user.html",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\user.html",
-              "RelativeToolTip": "a3_group15\\local_spotlights\\templates\\user.html",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-05-26T07:05:03.316Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "event_details_style.css",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\static\\styles\\event_details_style.css",
-              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\static\\styles\\event_details_style.css",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\static\\styles\\event_details_style.css",
-              "RelativeToolTip": "a3_group15\\local_spotlights\\static\\styles\\event_details_style.css",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAAAE4AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-05-26T05:53:42.134Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "event_details.html",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\events\\event_details.html",
-              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\templates\\events\\event_details.html",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\templates\\events\\event_details.html",
-              "RelativeToolTip": "a3_group15\\local_spotlights\\templates\\events\\event_details.html",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEsAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-05-26T04:40:12.94Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "booked_event_style.css",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\static\\styles\\booked_event_style.css",
-              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\static\\styles\\booked_event_style.css",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\static\\styles\\booked_event_style.css",
-              "RelativeToolTip": "a3_group15\\local_spotlights\\static\\styles\\booked_event_style.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-05-26T05:23:56.621Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "booking_style.css",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\static\\styles\\booking_style.css",
-              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\static\\styles\\booking_style.css",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\static\\styles\\booking_style.css",
-              "RelativeToolTip": "a3_group15\\local_spotlights\\static\\styles\\booking_style.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-05-26T05:23:58.569Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "gif_1.gif",
-              "DocumentMoniker": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\static\\img\\gif_1.gif",
-              "RelativeDocumentMoniker": "a3_group15\\local_spotlights\\static\\img\\gif_1.gif",
-              "ToolTip": "C:\\Users\\choch\\source\\repos\\actual\\a3_group15\\local_spotlights\\static\\img\\gif_1.gif",
-              "RelativeToolTip": "a3_group15\\local_spotlights\\static\\img\\gif_1.gif",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
-              "WhenOpened": "2024-05-26T05:00:06.805Z",
-              "EditorCaption": ""
->>>>>>> parent of 705f7f6 (- Added genre filter functionality to index.html)
             }
           ]
         }

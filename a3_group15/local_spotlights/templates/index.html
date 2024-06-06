@@ -47,20 +47,22 @@
                         {% endfor %}
                     </div>
                 </div>
-                <div class="subnav">
+               <div class="subnav">
                     <button class="subnavbtn">Location<i class="fa fa-caret-down"></i></button>
                     <div class="subnav-content">
                         <input type="text" name="location" placeholder="Location..." value="{{ location }}">
+                        <button type="submit" class="btn">Search</button>
                     </div>
-                </div>
-                <div class="subnav">
+               </div>
+               <div class="subnav">
                     <button type="button" class="subnavbtn">Date<i class="fa fa-caret-down"></i></button>
                     <div class="subnav-content">
-                        <input type="date" placeholder="">
+                        <input type="date" name="date" placeholder="" value="{{date}}">
+                        <button type="submit" class="btn">Search</button>
                     </div>
-                </div>
-               </form>
-            </div>
+               </div>
+            </form>
+        </div>
    </div>
 
         <div class="container">

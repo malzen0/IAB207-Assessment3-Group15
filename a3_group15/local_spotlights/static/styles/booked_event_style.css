@@ -83,13 +83,6 @@ li{
 
 }
 
-img {
-    height:100%;
-    width: 100%;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius:10px;
-}
-
 text {
     font-size: 22px;
     width:100%;
@@ -109,8 +102,6 @@ a:hover, a:active {
 
 .event_wrapper{
      background-color: pink;
-     margin-top:20px;
-     padding-left:10px;
      border: none;
      text-align: left;
      width:100%;
