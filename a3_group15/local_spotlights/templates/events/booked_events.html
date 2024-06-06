@@ -17,10 +17,11 @@
             </div>
             <div class="text">
                 <h2>{{event.artist}}</h2>
+                <h5>{{event.status}}</h5>
                 <div class="Venue"><p> Venue: {{event.venue}} </p> </div>
                 <div class="price"><p> Genre: {{event.genre}} </p> </div>
                 <div class="date"><p> Venue: {{event.date.strftime('%d-%b-%Y')}} </p> </div>
-                <a class="details" href="{{url_for('event.show', id=event.id)}}">View Details</a>
+                <a href="{{url_for('event.show', id=event.id)}}" class="btn btn-danger">View Details</a>
             </div>
             <div class="event_wrapper">
                 <h2 style="color: black; text-decoration: underline;">Order Details: </h2>
