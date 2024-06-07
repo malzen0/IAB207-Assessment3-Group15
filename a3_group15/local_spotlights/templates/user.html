@@ -11,7 +11,7 @@
 
 
 <!-- Form rendering is simple and easy if using bootstrap -->
-<div class="col-md-6" style="margin-left: 50px; color:white; font-size: 25px;">
+<div class="col-md-6" style="margin-left: 50px; margin-bottom:20px; margin-right:50px; color:white; font-size: 25px;">
     {{render_form(form)}}
 </div>
 
@@ -19,6 +19,10 @@
 {% if heading|lower =='login' %}
 <div class="col-md-4">
     <h3 style="margin-left: 50px; color:white;">New user? <a style="font-size:25px;" href="{{ url_for('auth.register') }}">Click here to register</a>.</h3>
+</div>
+
+<div container style="height:370px;">
+    
 </div>
 {% endif %}
 {% endblock %}

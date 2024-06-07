@@ -5,6 +5,7 @@ body {
     font-size: 30px;
     font-family: Pixelify Sans !important;
     font-weight: 500;
+    overflow-x:hidden;
 }
 
 /*fonts*/
@@ -96,8 +97,9 @@ body {
     margin-left: auto;
     background-color: pink;
     border-top: 2px solid pink;
-    padding: 12px;
-    width: 70%;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 90%;
     font-size: 22px;
     color: white;
     display: grid;
@@ -250,12 +252,34 @@ body {
     margin-bottom: 50px;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color:darkred;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: salmon;
+    border-radius: 10px;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #b30000;
+    }
 
 /*BUTTONS*/
 
 .card-img-top {
     width: auto;
     height: 40%;
+    max-height:200px;
     border-top-left-radius: 10px !important;
     border-top-right-radius: 10px !important;
 }
@@ -277,6 +301,8 @@ body {
 
 .card-body {
     background-color: antiquewhite;
+    max-height:300px;
+    max-width:400px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -297,8 +323,9 @@ body {
 
 .card-text {
     font-size: 20px;
-    height: 200px;
+    max-height: 150px;
     overflow-y: auto;
+    overflow-x:auto;
     font-family: Azeret Mono;
     color: darkred !important;
 }

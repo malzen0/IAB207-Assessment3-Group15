@@ -39,7 +39,9 @@ def index():
         except ValueError:
             pass
     
-    return render_template('index.html', query.all, selected_genres=genres, location = location, date=date)
+    events= query.all()
+        
+    return render_template('index.html', events=events, selected_genres=genres, location = location, date=date)
 
 def update_db():
     current_date = date.today()

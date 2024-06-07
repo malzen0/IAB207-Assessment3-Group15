@@ -16,29 +16,42 @@
         <h1 style="color: white; text-decoration: underline; text-align: center; margin-top:30px;">Event Creator</h1>
         <div class="col-md-7">
             <div class="container">
-                    <div class="row">
-                        <div class="container">
-                            <div class="row mt-5">
-                                <div class="col-md-12">
-                                    <h1>Create Event</h1>
-                                        {{render_form(form)}}
-                                </div>
+                <div class="row">
+                    <div class="container">
+                        <div class="row mt-5">
+                            <div class="col-md-12">
+                                <h1>Create Event</h1>
+                                {{render_form(form)}}
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
         <div class="col-md-5" style="height: 50%;">
             <div class="container">
-                <img src="{{url_for('static', filename= 'img/placeholder.png')}}" style="width:90%; height:auto; padding-top: 30px; margin-left:auto; margin-right: auto; display:block" />
+                <img id="imgDefault" src="{{url_for('static', filename= 'img/placeholder.png')}}" style="width:90%; height:auto; padding-top: 30px; margin-left:auto; margin-right: auto; display:block" />
             </div>
         </div>
         <div class="row" style="margin-left:auto; margin-right: auto;
          margin-top:25px; display: block; margin-bottom: 50px;">
-            <input type="submit" value="CREATE">
         </div>
     </div>
 
     {% endblock content %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('img').addEventListener('change', function (event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        document.getElementById('imgDefault').src = e.target.result;
+                    }
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+    </script>
 </body>
-</html>
+
