@@ -69,6 +69,7 @@ def create():
             ticket_price = form.ticket_price.data,
             description = form.description.data, 
             img = db_file_path,
+            user_id = current_user.id,
             )
         
         #add the object to the database session 
@@ -127,7 +128,16 @@ def comment(id):
         # Flash success when comment uploads
         flash('Your comment has been added', 'success')
     return redirect(url_for('event.show', id = id))
-            
+
+# My events - events created by current user
+@eventbp.route('/my-events')
+def my_events():
+    user_events = db.session.query(Event).join(EventStatus).filter(Event.user_id == current_user.id).all()
+    upcoming_events = [event for event in user_events if event.status.status == 'Open']
+    past_events = [event for event in user_events if event.status.status != 'Open']
+    return render_template('events/my_events.html', upcoming_events=upcoming_events, past_events=past_events)
+
+
 # Cancel the event
 @eventbp.route('/<id>/cancel')
 def cancel(id):

@@ -22,6 +22,7 @@
         <a>LOGGED_IN_AS: {{current_user.name}}</a>
         <a href="{{ url_for('event.create') }}">CREATE_EVENT</a>
         <a href="{{ url_for('event.booked_events')}}">BOOKED_EVENTS</a>
+        <a href="{{ url_for('event.my_events')}}">MY_EVENTS</a>
         <a href="{{ url_for('auth.logout') }}">LOG_OUT</a>
     {% else %}
         <a href="{{ url_for('auth.register') }}">REGISTER</a>

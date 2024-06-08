@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/booked_event_style.css') }}" />
+{% endblock head %}
+
+<body class="body">
+    {% block content %}
+    <div class="main_container">
+        <div style="font-size: 40px; text-decoration: underline; text-align: center; color:white; margin-bottom:25px;">
+            My Events
+        </div>
+
+        <div class="upcoming_events">
+            <h2 style="text-align: center; color: white;">Upcoming Events</h2>
+            {% for event in upcoming_events %}
+            <div class="container">
+                <div class="image">
+                    <img src="{{event.img}}">
+                </div>
+                <div class="text">
+                    <h2>{{event.artist}}</h2>
+                    <h5>{{event.status.status}}</h5>
+                    <div class="Venue"><p> Venue: {{event.venue}} </p> </div>
+                    <div class="price"><p> Genre: {{event.genre}} </p> </div>
+                    <div class="date"><p> Event Date: {{event.date.strftime('%d-%b-%Y')}} </p> </div>
+                    <a href="{{url_for('event.show', id=event.id)}}" class="btn btn-danger">View Details</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="past_events" style="margin-top: 50px;">
+            <h2 style="text-align: center; color: white;">Past Events</h2>
+            {% for event in past_events %}
+            <div class="container">
+                <div class="image">
+                    <img src="{{event.img}}">
+                </div>
+                <div class="text">
+                    <h2>{{event.artist}}</h2>
+                    <h5>{{event.status.status}}</h5>
+                    <div class="Venue"><p> Venue: {{event.venue}} </p> </div>
+                    <div class="price"><p> Genre: {{event.genre}} </p> </div>
+                    <div class="date"><p> Event Date: {{event.date.strftime('%d-%b-%Y')}} </p> </div>
+                    <a href="{{url_for('event.show', id=event.id)}}" class="btn btn-danger">View Details</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock content %}
+</body>
