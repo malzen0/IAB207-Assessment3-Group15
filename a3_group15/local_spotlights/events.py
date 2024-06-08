@@ -22,18 +22,14 @@ def index():
 
 def update_db():
     current_date = date.today()
-    print(current_date)
 
     events = db.session.query(Event).all()
 
     for event in events:
         event_status = db.session.query(EventStatus).filter_by(event_id=event.id).first()
         status_text = event_status.status if event_status else None
-        print(f"Event Status: '{status_text}', Event Date: {event.date}, Artist: {event.artist}")
         if event.date < current_date and status_text == 'Open':
-                print(event.artist)
                 db.session.query(EventStatus).filter_by(event_id=event.id).update({'status': 'Inactive'})
-                print("updated "+event.artist)
                 db.session.commit()
 
 # Event 
@@ -53,7 +49,6 @@ def show(id):
 @eventbp.route('/create', methods = ['GET', 'POST'])
 @login_required
 def create():
-    print('Method type: ', request.method)
     form = EventForm()
     if form.validate_on_submit():
         # Call function to check and return image 
@@ -159,7 +154,7 @@ def edit_event(id):
             quantity_change = form.ticket_quantity.data - event.ticket_quantity
             if quantity_change > 0:
                 event.status.status = 'Open'
-                
+
             #Update event details
             event.artist = form.artist.data
             event.genre = form.genre.data
@@ -210,12 +205,10 @@ def booked_events():
 @login_required
 def booking(id):
     event = db.session.scalar(db.select(Event).where(Event.id == id))
-    print(event.artist)
     if not event:
         abort(404)
 
     event_status = db.session.scalar(db.select(EventStatus).where(EventStatus.event_id == id))
-    print(event_status.status)
     if not event_status:
         abort(404)
 
@@ -226,11 +219,9 @@ def booking(id):
         else:
             order = Order(ticket_quantity = form.ticket_quantity.data, event=event, user=current_user)
             #add the object to the database session 
-            print(f'Before: {event_status.tickets_available}')
             event_status.tickets_available -= form.ticket_quantity.data
             if event_status.tickets_available == 0:
                 event_status.status= "Sold Out"
-            print(f'After: {event_status.tickets_available}')
             db.session.add(order)
             db.session.commit()
             flash('Succesfully purchased tickets', 'success')
