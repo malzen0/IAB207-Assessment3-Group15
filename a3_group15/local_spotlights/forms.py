@@ -56,13 +56,13 @@ class TicketBookingForm(FlaskForm):
 
 #This is the edit event form
 class EditEventForm(FlaskForm):
-    artist = StringField('Artist', validators=[DataRequired()])
-    genre = StringField('Genre', validators=[DataRequired()])
-    venue = StringField('Venue', validators=[DataRequired()])
-    start_time = TimeField('Start Time', validators=[DataRequired()])
-    end_time = TimeField('End Time', validators=[DataRequired()])
-    date = DateField('Date', validators=[DataRequired()])
-    add_ticket_quantity = IntegerField('Ticket Quantity', validators=[DataRequired()])
-    ticket_price = FloatField('Ticket Price', validators=[DataRequired()])
-    description = TextAreaField('Description', validators=[DataRequired()])
+    artist = StringField('Artist', validators=[InputRequired()])
+    genre = StringField('Genre', validators=[InputRequired()])
+    venue = StringField('Venue', validators=[InputRequired()])
+    start_time = TimeField('Start Time', validators=[InputRequired()])
+    end_time = TimeField('End Time', validators=[InputRequired()])
+    date = DateField('Date', validators=[InputRequired()])
+    ticket_quantity = IntegerField('Ticket Quantity', validators=[InputRequired()])
+    ticket_price = FloatField('Ticket Price', validators=[InputRequired()])
+    description = TextAreaField('Description', validators=[InputRequired()])
     submit = SubmitField('Update Event')

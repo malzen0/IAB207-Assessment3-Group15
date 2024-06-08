@@ -25,6 +25,7 @@
                     <div class="price"><p> Genre: {{event.genre}} </p> </div>
                     <div class="date"><p> Event Date: {{event.date.strftime('%d-%b-%Y')}} </p> </div>
                     <a href="{{url_for('event.show', id=event.id)}}" class="btn btn-danger">View Details</a>
+                    <a href="{{url_for('event.edit_event', id=event.id)}}" class="btn btn-primary">Edit Event</a>
                 </div>
             </div>
             {% endfor %}

@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash, abort
 from .models import Event, EventStatus, Comment, Order
-from .forms import EventForm, CommentForm, TicketBookingForm
+from .forms import EventForm, CommentForm, TicketBookingForm, EditEventForm
 from . import db
 import os
 from werkzeug.utils import secure_filename
@@ -137,6 +137,47 @@ def my_events():
     past_events = [event for event in user_events if event.status.status != 'Open']
     return render_template('events/my_events.html', upcoming_events=upcoming_events, past_events=past_events)
 
+
+@eventbp.route('/<id>/edit-event', methods=['GET', 'POST'])
+@login_required
+def edit_event(id):
+    event = db.session.scalar(db.select(Event).where(Event.id == id))
+    print(event.artist)
+    if not event:
+        abort(404)
+
+    if event.user_id != current_user.id:
+        flash('You are not authorized to edit this event', 'danger')
+        return redirect(url_for('eventbp.my_events'))
+    
+    form = EditEventForm(obj=event)
+    if form.validate_on_submit():
+        #Cannot reduce the number of tickets
+        if form.ticket_quantity.data < event.ticket_quantity:
+            flash('Ticket quantity cannot be less than the current ticket quantity.', 'danger')
+        else:
+            #Calculate the number of addtional tickets added
+            quantity_change = form.ticket_quantity.data - event.ticket_quantity
+
+            #Update event details
+            event.artist = form.artist.data
+            event.genre = form.genre.data
+            event.venue = form.venue.data
+            event.start_time = form.start_time.data
+            event.end_time = form.end_time.data
+            event.date = form.date.data
+            event.ticket_quantity = form.ticket_quantity.data
+            event.ticket_price = form.ticket_price.data
+            event.description = form.description.data
+            
+            # Update tickets_available in EventStatus
+            event.status.tickets_available += quantity_change
+            
+            db.session.commit()
+            flash('Event has been updated', 'success')
+            return redirect(url_for('event.my_events'))
+    
+    return render_template('events/edit_event.html', form=form, event=event)
 
 # Cancel the event
 @eventbp.route('/<id>/cancel')
