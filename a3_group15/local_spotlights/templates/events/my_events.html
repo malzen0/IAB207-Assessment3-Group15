@@ -8,7 +8,7 @@
 <body class="body">
     {% block content %}
     <div class="main_container">
-        <div style="font-size: 40px; text-decoration: underline; text-align: center; color:white; margin-bottom:25px;">
+        <div class = "title">
             My Events
         </div>
 
@@ -21,10 +21,11 @@
                 </div>
                 <div class="text">
                     <h2>{{event.artist}}</h2>
-                    <h5>{{event.status.status}}</h5>
-                    <div class="Venue"><p> Venue: {{event.venue}} </p> </div>
-                    <div class="price"><p> Genre: {{event.genre}} </p> </div>
-                    <div class="date"><p> Event Date: {{event.date.strftime('%d-%b-%Y')}} </p> </div>
+                    <p> Venue: {{event.venue}} </p>
+                    <p> Event Date: {{event.date.strftime('%d-%b-%Y')}} </p>
+                    <p> Ticket Quantity: {{event.ticket_quantity}}</p>
+                    <p> Tickets Available: {{event.status.tickets_available}}</p>
+                    <h5>Status: {{event.status.status}}</h5>
                     <a href="{{url_for('event.show', id=event.id)}}" class="btn btn-danger">View Details</a>
                     <a href="{{url_for('event.edit_event', id=event.id)}}" class="btn btn-primary">Edit Event</a>
 
@@ -67,10 +68,11 @@
                 </div>
                 <div class="text">
                     <h2>{{event.artist}}</h2>
-                    <h5>{{event.status.status}}</h5>
-                    <div class="Venue"><p> Venue: {{event.venue}} </p> </div>
-                    <div class="price"><p> Genre: {{event.genre}} </p> </div>
-                    <div class="date"><p> Event Date: {{event.date.strftime('%d-%b-%Y')}} </p> </div>
+                    <p> Venue: {{event.venue}} </p>
+                    <p> Event Date: {{event.date.strftime('%d-%b-%Y')}} </p>
+                    <p> Ticket Quantity: {{event.ticket_quantity}}</p>
+                    <p> Tickets Available: {{event.status.tickets_available}}</p>
+                    <h5>Status: {{event.status.status}}</h5>
                     <a href="{{url_for('event.show', id=event.id)}}" class="btn btn-danger">View Details</a>
                 </div>
             </div>

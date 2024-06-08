@@ -9,20 +9,9 @@ body {
     background-color: pink;
     overflow: hidden;
     margin-bottom: 20px;
+    width: 100%;
 }
-/* Footer */
-.footer {
-    position: relative !important;
-    left: 0;
-    bottom: 0 !important;
-    width: 100% !important;
-    background-color: red;
-    height: auto !important;
-    color: white;
-    padding: 0px !important;
-    text-align: center;
-    margin-bottom: 0px !important;
-}
+
     .topnav a {
         float: left;
         display: block;
@@ -31,7 +20,7 @@ body {
         padding: 14px 16px;
         text-decoration: none;
         font-size: 32px;
-        font-family: VT323;
+        font-family: pixelify sans;
         font-weight: 500;
     }
 
@@ -48,23 +37,6 @@ body {
     .topnav .icon {
         display: none;
     }
-.find {
-    position: absolute;
-    font-size: 35px;
-    background-color: pink;
-    border-radius: 10px;
-    top: -110px;
-    left: 0px;
-}
-
-.status {
-    font-size: 25px;
-    color: crimson;
-}
-
-li{
-    list-style-type: none;
-}
 
 .container {
     column-gap: 5px;
@@ -80,6 +52,7 @@ li{
     text-align: left;
     color: black;
     border: 2px solid darkred;
+    font-family: pixelify sans;
 
 }
 
@@ -96,25 +69,8 @@ text {
 
 }
 
-.details {
-    background-color: crimson;
-    color: white;
-    text-align: center;
-    border-radius: 10px;
-}
-
-a:hover, a:active {
-    background-color: red;
-}
-
-.event_wrapper{
-     background-color: pink;
-     margin-top:20px;
-     padding-left:10px;
-     border: none;
-     text-align: left;
-     width:100%;
-     color:darkred;
+.order {
+    color:darkred;
 }
 
 @media (min-width:768px) {
@@ -127,14 +83,38 @@ a:hover, a:active {
     }
 }
 
-.main_container{
-    width:65%;
-    display: grid;
-    margin-left:auto;
-    margin-right:auto;
+.title{
+    font-size: 40px; 
+    text-decoration: underline; 
+    text-align: center;
+    color:white;
+    margin-bottom:25px;
+    font-family: pixelify sans;
+}
 
+p{
+    font-size: 22px;
 }
 
 h3{
     text-align: center;
+    font-family: pixelify sans;
+}
+
+h5{
+    color: red !important;
+}
+
+.order_title{
+    color: black; 
+    text-decoration: underline;
+}
+
+.modal-header {
+    background-color: darkred;
+    color: white;
+}
+
+.modal-footer .btn {
+    border-radius: 10px;
 }
