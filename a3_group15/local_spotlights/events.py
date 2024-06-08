@@ -142,7 +142,6 @@ def my_events():
 @login_required
 def edit_event(id):
     event = db.session.scalar(db.select(Event).where(Event.id == id))
-    print(event.artist)
     if not event:
         abort(404)
 
@@ -172,7 +171,7 @@ def edit_event(id):
             
             # Update tickets_available in EventStatus
             event.status.tickets_available += quantity_change
-            
+
             db.session.commit()
             flash('Event has been updated', 'success')
             return redirect(url_for('event.my_events'))
@@ -180,13 +179,20 @@ def edit_event(id):
     return render_template('events/edit_event.html', form=form, event=event)
 
 # Cancel the event
-@eventbp.route('/<id>/cancel')
-def cancel(id):
+@eventbp.route('/<id>/cancel', methods = ['GET', 'POST'])
+def cancel_event(id):
     event = db.session.scalar(db.select(Event).where(Event.id == id))
-    #
-    # 
-    # 
-    return redirect(url_for('event.show', id=id))
+    if not event:
+        abort(404)
+
+    if event.user_id != current_user.id:
+        flash('You are not authorized to cancel this event', 'danger')
+        return redirect(url_for('event.my_events'))
+
+    event.status.status = 'Cancelled'
+    db.session.commit()
+    flash(f'Event for "{event.artist}" has been cancelled', 'success')
+    return redirect(url_for('event.my_events'))
 
 # Booked events 
 @eventbp.route('/booked-events')

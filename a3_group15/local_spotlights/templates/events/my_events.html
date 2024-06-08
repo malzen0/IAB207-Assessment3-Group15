@@ -2,6 +2,7 @@
 {% block head %}
 {{ super() }}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/booked_event_style.css') }}" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 {% endblock head %}
 
 <body class="body">
@@ -26,6 +27,31 @@
                     <div class="date"><p> Event Date: {{event.date.strftime('%d-%b-%Y')}} </p> </div>
                     <a href="{{url_for('event.show', id=event.id)}}" class="btn btn-danger">View Details</a>
                     <a href="{{url_for('event.edit_event', id=event.id)}}" class="btn btn-primary">Edit Event</a>
+                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#cancelModal{{ event.id }}">Cancel Event</button>
+
+                    <!-- Cancel Event Modal -->
+                    <div class="modal fade" id="cancelModal{{ event.id }}" tabindex="-1" role="dialog" aria-labelledby="cancelModalLabel{{ event.id }}" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="cancelModalLabel{{ event.id }}">Confirm Cancellation</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you want to cancel this event?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <form action="{{ url_for('event.cancel_event', id=event.id) }}" method="POST" style="display:inline;">
+                                        <button type="submit" class="btn btn-warning">Yes, Cancel Event</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
             {% endfor %}
