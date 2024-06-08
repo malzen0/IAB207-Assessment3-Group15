@@ -57,7 +57,7 @@ class TicketBookingForm(FlaskForm):
 #This is the edit event form
 class EditEventForm(FlaskForm):
     artist = StringField('Artist', validators=[InputRequired()])
-    genre = StringField('Genre', validators=[InputRequired()])
+    genre = SelectField("Genre", choices=[('rock', 'Rock'), ('metal', 'Metal'), ('pop', 'Pop'), ('blues/jazz', 'Blues/Jazz'), ('country', 'Country'), ('alternative', 'Alternative')])
     venue = StringField('Venue', validators=[InputRequired()])
     start_time = TimeField('Start Time', validators=[InputRequired()])
     end_time = TimeField('End Time', validators=[InputRequired()])
