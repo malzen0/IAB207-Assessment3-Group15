@@ -133,8 +133,8 @@ def comment(id):
 @eventbp.route('/my-events')
 def my_events():
     user_events = db.session.query(Event).join(EventStatus).filter(Event.user_id == current_user.id).all()
-    upcoming_events = [event for event in user_events if event.status.status == 'Open']
-    past_events = [event for event in user_events if event.status.status != 'Open']
+    upcoming_events = [event for event in user_events if event.status.status == 'Open' or event.status.status == 'Sold Out' ]
+    past_events = [event for event in user_events if event.status.status != 'Open' or event.status.status == 'Sold Out']
     return render_template('events/my_events.html', upcoming_events=upcoming_events, past_events=past_events)
 
 
