@@ -78,6 +78,11 @@ input[type=text], select, textarea {
     font-family: Pixelify Sans;
 }
 
+h1{
+    color: darkred !important; 
+    text-decoration: underline;
+}
+
 h2{
     font-family: azeret mono;
     color: darkred !important;
@@ -87,6 +92,11 @@ h2{
 h3{
     font-family: azeret mono;
     font-size: 20px !important;
+}
+
+p{
+    font-family: azeret mono;
+    font-size: 20px;
 }
 
 input[type=submit] {
@@ -135,16 +145,26 @@ input[type=submit] {
     margin-left: 10px;
 }
 
-.custom-btn {
+.disabled-button {
+    text-align:center; 
+    font-size:40px; 
+    border-radius:10px;
+}
+
+.enabled-button {
+    background-color:darkred; 
+    text-align:center;
+    color:white; 
+    font-size:40px; 
+    border-radius:10px;
+}
+
+.modal-header {
     background-color: darkred;
     color: white;
-    font-size: 20px;
+}
+
+.modal-footer .btn {
     border-radius: 10px;
-    text-align: center;
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    text-decoration: none;
 }
 
