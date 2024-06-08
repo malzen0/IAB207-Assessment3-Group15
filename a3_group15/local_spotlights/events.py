@@ -134,7 +134,7 @@ def comment(id):
 def my_events():
     user_events = db.session.query(Event).join(EventStatus).filter(Event.user_id == current_user.id).all()
     upcoming_events = [event for event in user_events if event.status.status == 'Open' or event.status.status == 'Sold Out' ]
-    past_events = [event for event in user_events if event.status.status != 'Open' or event.status.status == 'Sold Out']
+    past_events = [event for event in user_events if event.status.status == 'Cancelled' or event.status.status == 'Inactive']
     return render_template('events/my_events.html', upcoming_events=upcoming_events, past_events=past_events)
 
 
@@ -198,8 +198,8 @@ def cancel_event(id):
 @eventbp.route('/booked-events')
 def booked_events():
     orders = db.session.query(Order).join(Event).join(EventStatus).filter(Order.user_id == current_user.id).all()
-    upcoming_events = [(order, order.event) for order in orders if order.event.status.status == 'Open']
-    past_events = [(order, order.event) for order in orders if order.event.status.status != 'Open']
+    upcoming_events = [(order, order.event) for order in orders if order.event.status.status == 'Open' or order.event.status.status == 'Sold Out']
+    past_events = [(order, order.event) for order in orders if order.event.status.status == 'Cancelled' or order.event.status.status == 'Inactive']
     return render_template('events/booked_events.html', upcoming_events=upcoming_events, past_events=past_events)
 
 
