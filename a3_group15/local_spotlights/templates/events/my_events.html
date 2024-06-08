@@ -13,7 +13,7 @@
         </div>
 
         <div class="upcoming_events">
-            <h2 style="text-align: center; color: white;">Upcoming Events</h2>
+            <h3>Upcoming Events</h3>
             {% for event in upcoming_events %}
             <div class="container">
                 <div class="image">
@@ -27,6 +27,7 @@
                     <div class="date"><p> Event Date: {{event.date.strftime('%d-%b-%Y')}} </p> </div>
                     <a href="{{url_for('event.show', id=event.id)}}" class="btn btn-danger">View Details</a>
                     <a href="{{url_for('event.edit_event', id=event.id)}}" class="btn btn-primary">Edit Event</a>
+
                     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#cancelModal{{ event.id }}">Cancel Event</button>
 
                     <!-- Cancel Event Modal -->
@@ -58,7 +59,7 @@
         </div>
 
         <div class="past_events" style="margin-top: 50px;">
-            <h2 style="text-align: center; color: white;">Past Events</h2>
+            <h3>Past Events</h3>
             {% for event in past_events %}
             <div class="container">
                 <div class="image">
