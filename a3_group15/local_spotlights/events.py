@@ -140,9 +140,10 @@ def cancel(id):
 # Booked events 
 @eventbp.route('/booked-events')
 def booked_events():
-    orders = db.session.query(Order).filter_by(user_id=current_user.id).all()
-    order_event_info = [(order, order.event) for order in orders]
-    return render_template('events/booked_events.html', order_event_info=order_event_info)
+    orders = db.session.query(Order).join(Event).join(EventStatus).filter(Order.user_id == current_user.id).all()
+    upcoming_events = [(order, order.event) for order in orders if order.event.status.status == 'Open']
+    past_events = [(order, order.event) for order in orders if order.event.status.status != 'Open']
+    return render_template('events/booked_events.html', upcoming_events=upcoming_events, past_events=past_events)
 
 
 # Book event ticket

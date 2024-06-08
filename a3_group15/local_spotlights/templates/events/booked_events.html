@@ -6,11 +6,11 @@
 
 <body class="body">
     {% block content %}
-
-    <div class="main_container">
-        <div style="font-size: 40px; text-decoration: underline; text-align: center; color:white;
+    <div style="font-size: 40px; text-decoration: underline; text-align: center; color:white;
         margin-bottom:25px;">Booked Events</div>
-        {% for order, event in order_event_info %}
+    <div class="upcoming_events">
+        <h3>Upcoming Events</h3>
+        {% for order, event in upcoming_events %}
         <div class="container">
             <div class="image">
                 <img src="{{event.img}}">
@@ -32,5 +32,31 @@
         </div>
         {% endfor %}
     </div>
+
+    <div class="past_events" style="margin-top: 50px;">
+        <h3>Past Events</h3>
+        {% for order, event in past_events %}
+        <div class="container">
+            <div class="image">
+                <img src="{{event.img}}">
+            </div>
+            <div class="text">
+                <h2>{{event.artist}}</h2>
+                <h5>{{event.status}}</h5>
+                <div class="Venue"><p> Venue: {{event.venue}} </p> </div>
+                <div class="price"><p> Genre: {{event.genre}} </p> </div>
+                <div class="date"><p> Event Date: {{event.date.strftime('%d-%b-%Y')}} </p> </div>
+                <a href="{{url_for('event.show', id=event.id)}}" class="btn btn-danger">View Details</a>
+            </div>
+            <div class="event_wrapper">
+                <h2 style="color: black; text-decoration: underline;">Order Details: </h2>
+                <div class="Order Date"><p>Date: {{ order.order_date.strftime('%d-%b-%Y') }} </p></div>
+                <div class="orderID"><p>OrderID: {{ order.id }}</p> </div>
+                <div class="Tickets Booked"><p>Tickets Booked: {{ order.ticket_quantity }}</p> </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
     {% endblock content %}
 </body>
