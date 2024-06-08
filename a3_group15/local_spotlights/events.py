@@ -157,7 +157,9 @@ def edit_event(id):
         else:
             #Calculate the number of addtional tickets added
             quantity_change = form.ticket_quantity.data - event.ticket_quantity
-
+            if quantity_change > 0:
+                event.status.status = 'Open'
+                
             #Update event details
             event.artist = form.artist.data
             event.genre = form.genre.data
