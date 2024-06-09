@@ -6,7 +6,6 @@
 
 <body class="body">
     {% block content %}
-<<<<<<< HEAD
 
     <div class="main_container">
         <div style="font-size: 40px; text-decoration: underline; text-align: center; color:white;
@@ -17,7 +16,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-12">
-                        <img style="max-height: 500px; max-width: 100%; margin-top: 10px;padding:20px; " src="{{event.img}}" alt="event image">
+                        <img src="{{event.img}}" alt="event image">
                     </div>
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="padding-left:20px; padding-right:20px; margin:5px;">
                         <h2 style="text-decoration:underline;">{{event.artist}}</h2>
@@ -38,8 +37,6 @@
             {% endfor %}
         
         </div>
-=======
-    <div class="title">Booked Events</div>
     <div class="upcoming_events">
         <h3>Upcoming Events</h3>
         {% for order, event in upcoming_events %}
@@ -90,6 +87,5 @@
         {% endfor %}
     </div>
 
->>>>>>> d7bd03fc81901b85f4b5d28faffcc4b2c07287dc
     {% endblock content %}
 </body>
