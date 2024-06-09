@@ -31,6 +31,39 @@ body {
     width: 100%;
 }
 
+.topnav .icon {
+    display: none !important;
+}
+
+@media screen and (max-width:1700px) {
+    .topnav a:not(:first-child) {
+        display: none !important;
+    }
+
+    .topnav a.icon {
+        float: right !important;
+        display: block !important;
+    }
+}
+
+@media screen and (max-width: 1700px){
+    .topnav.responsive {
+        position: relative !important;
+    }
+    .topnav.respnsive .icon {
+        position: absolute !important;
+        right: 0 !important;
+        top: 0 !important;
+    }
+    .topnav.responsive a {
+        float: none !important;
+        display: block !important;
+        text-align: left !important;
+    }
+}
+
+
+
     .topnav a {
         float: left;
         display: block;
