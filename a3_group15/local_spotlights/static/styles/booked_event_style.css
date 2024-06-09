@@ -3,6 +3,7 @@ body {
     font-size: 30px;
     font-family: Pixelify Sans !important;
     font-weight: 500;
+    overflow-x: hidden;
 }
 /*Navigation/heading bars*/
 .topnav {
@@ -12,16 +13,19 @@ body {
     width: 100%;
 }
 
-<<<<<<< HEAD
+img {
+    max-height: 500px !important;
+    max-width: 100% !important;
+    margin-top: 10px !important;
+    padding: 20px !important;
+}
+
+
 p{
     font-family: Azeret mono;
     font-size: 20px;
 }
 
-
-
-=======
->>>>>>> d7bd03fc81901b85f4b5d28faffcc4b2c07287dc
     .topnav a {
         float: left;
         display: block;
@@ -30,10 +34,7 @@ p{
         padding: 14px 16px;
         text-decoration: none;
         font-size: 32px;
-<<<<<<< HEAD
-=======
         font-family: pixelify sans;
->>>>>>> d7bd03fc81901b85f4b5d28faffcc4b2c07287dc
         font-weight: 500;
         font-family: Pixelify Sans;
     }
@@ -76,7 +77,6 @@ text {
 
 }
 
-<<<<<<< HEAD
 .details {
     background-color: crimson;
     color: white;
@@ -94,10 +94,7 @@ a:hover, a:active {
      text-align: left;
      width:100%;
      color:darkred;
-=======
-.order {
-    color:darkred;
->>>>>>> d7bd03fc81901b85f4b5d28faffcc4b2c07287dc
+
 }
 
 @media (min-width:768px) {
@@ -117,9 +114,6 @@ a:hover, a:active {
     color:white;
     margin-bottom:25px;
     font-family: pixelify sans;
-}
-
-<<<<<<< HEAD
 }
 
 /* width */
@@ -143,10 +137,6 @@ a:hover, a:active {
     ::-webkit-scrollbar-thumb:hover {
         background: #b30000;
     }
-=======
-p{
-    font-size: 22px;
-}
 
 h3{
     text-align: center;
@@ -170,4 +160,3 @@ h5{
 .modal-footer .btn {
     border-radius: 10px;
 }
->>>>>>> d7bd03fc81901b85f4b5d28faffcc4b2c07287dc
