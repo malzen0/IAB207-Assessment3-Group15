@@ -66,3 +66,10 @@ class EditEventForm(FlaskForm):
     ticket_price = FloatField('Ticket Price', validators=[InputRequired()])
     description = TextAreaField('Description', validators=[InputRequired()])
     submit = SubmitField('Update Event')
+    
+class PaymentForm(FlaskForm):
+    cardholder_name = StringField('Cardholder Name', validators=[InputRequired()])
+    card_number = StringField('Card Number', validators=[InputRequired(), Length(min=16, max=16)])
+    expiration_date = DateField('Expiration Date (MM/YYYY)', format='%m/%Y', validators=[InputRequired()])
+    cvv = StringField('CVV', validators=[InputRequired(), Length(min=3, max=4)])
+    submit = SubmitField('Pay Now')
