@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from flask_wtf.file import FileAllowed, FileRequired
 from wtforms import DateField, TimeField, IntegerField, SelectField, ValidationError 
 from wtforms.fields import TextAreaField,SubmitField, StringField, PasswordField, FileField, IntegerField, FloatField, TelField 
-from wtforms.validators import InputRequired, Length, Email, EqualTo, NumberRange
+from wtforms.validators import InputRequired, Length, Email, EqualTo, NumberRange, Regexp
 from .models import EventStatus
 from . import db
  
@@ -51,7 +51,11 @@ class EventForm(FlaskForm):
 
 #This is the ticket booking form 
 class TicketBookingForm(FlaskForm):
-    ticket_quantity = IntegerField("Ticket Quantity")
+    ticket_quantity = IntegerField("Ticket Quantity", validators=[InputRequired(), NumberRange(min = 1)])
+    cardholder_name = StringField('Cardholder Name', validators=[InputRequired()])
+    card_number = StringField('Card Number', validators=[InputRequired(), Length(min=16, max=16)])
+    expiration_date = StringField('Expiration Date', validators=[InputRequired(), Regexp(r'^\d{2}/\d{2}$', message='MM/YY format')])
+    cvv = StringField('CVV', validators=[InputRequired(), Length(min=3, max=4)])
     submit = SubmitField("Book Ticket")
 
 #This is the edit event form
@@ -67,9 +71,3 @@ class EditEventForm(FlaskForm):
     description = TextAreaField('Description', validators=[InputRequired()])
     submit = SubmitField('Update Event')
     
-class PaymentForm(FlaskForm):
-    cardholder_name = StringField('Cardholder Name', validators=[InputRequired()])
-    card_number = StringField('Card Number', validators=[InputRequired(), Length(min=16, max=16)])
-    expiration_date = DateField('Expiration Date (MM/YYYY)', format='%m/%Y', validators=[InputRequired()])
-    cvv = StringField('CVV', validators=[InputRequired(), Length(min=3, max=4)])
-    submit = SubmitField('Pay Now')

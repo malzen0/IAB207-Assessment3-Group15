@@ -36,7 +36,7 @@
                                 </p>
                                 <h2>Date</h2>
                                 <p>
-                                    {{event.date}}
+                                    {{event.date.strftime('%d-%m-%Y')}}
                                 </p>
                                 <h2>Opening Bands</h2>
                                 <p>
@@ -103,23 +103,16 @@
             <!-- Comments -->
             <div class="row" style="margin-bottom:50px;">
                 <div class="col-md-6 col-sm-12">
-<<<<<<< HEAD
-                    <div style="margin-left:10px;">
-                        <h2 style="color: darkred; text-decoration: underline; overflow:auto;">See What People Are Saying!</h2>
-                        <div style="background-color:white; border-radius:10px; padding:20px; font-family:azeret mono;">
-                            {% for comment in event.comments %}
-=======
                     <h1>See What People Are Saying!</h1>
                     <div>
                         {% for comment in event.comments %}
->>>>>>> d7bd03fc81901b85f4b5d28faffcc4b2c07287dc
                             <b>{{comment.user.name}} <span class="ml-2 text-muted">{{comment.created_at.strftime('%d-%m-%Y %H:%M')}}</span></b>
                             <p>{{comment.text}}</p>
                             {% endfor %}
                         </div>
                     </div>
                 </div>
-                <div style=""class="col-md-6 col-sm-12 ">
+                <div class="col-md-6 col-sm-12 ">
                     {{render_form(form, url_for('event.comment', id=event.id))}}
                 </div>
             </div>

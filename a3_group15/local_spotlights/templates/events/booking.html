@@ -15,26 +15,41 @@
     <div class="row" style="margin: 0px 50px 0px 50px;">
         <div class="col-75">
             <div class="container">
+
                 <h1>Purchasing tickets for: {{event.artist}}</h1>
                 <h4>Date: {{event.date}}</h4>
                 <h4>Ticket Price: ${{event.ticket_price}}</h4>
-                {{render_form(form)}}
+
+                <form method="POST" action="">
+                    {{form.hidden_tag() }}
+                    {{ form.ticket_quantity.label }}
+                    {{ form.ticket_quantity(class="form-control", placeholder="0") }}
+                    <br>
+                    <h4>Payment Details</h4>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            {{ form.cardholder_name.label }}
+                            {{ form.cardholder_name(class="form-control", placeholder="Name on card") }}
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            {{ form.card_number.label }}
+                            {{ form.card_number(class="form-control", placeholder="0000-0000-0000-0000") }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            {{ form.expiration_date.label }}
+                            {{ form.expiration_date(class="form-control", placeholder="MM/YY") }}
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            {{ form.cvv.label }}
+                            {{ form.cvv(class="form-control", placeholder="CVV") }}
+                        </div>
+                    </div>
+                    {{ form.submit(class="form-control btn btn-danger") }}
+                </form>
 
 
-                <h3>Payment Details</h3>
-                <div class="form-group">
-                    {{ payment_form.cardholder_name.label }} {{ payment_form.cardholder_name(class="form-control") }}
-                </div>
-                <div class="form-group">
-                    {{ payment_form.card_number.label }} {{ payment_form.card_number(class="form-control") }}
-                </div>
-                <div class="form-group">
-                    {{ payment_form.expiration_date.label }} {{ payment_form.expiration_date(class="form-control") }}
-                </div>
-                <div class="form-group">
-                    {{ payment_form.cvv.label }} {{ payment_form.cvv(class="form-control") }}
-                </div>
-                <button type="submit" class="btn btn-primary">{{ payment_form.submit.label }}</button>
             </div>
         </div>
     </div>
