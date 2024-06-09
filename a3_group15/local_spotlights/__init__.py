@@ -1,5 +1,5 @@
 #import flask - from the package import class
-from flask import Flask 
+from flask import Flask, render_template
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
@@ -29,6 +29,7 @@ def create_app():
    # set the name of the login function that lets user login
    # in our case it is auth.login (blueprintname.viewfunction name)
    login_manager.login_view = 'auth.login'
+   login_manager.login_message_category= 'danger'
    login_manager.init_app(app)
 
    # create a user loader function takes userid and returns User
@@ -48,6 +49,19 @@ def create_app():
    from . import events
    app.register_blueprint(events.eventbp)
 
+   @app.errorhandler(404) 
+   def page_not_found(error): 
+      return render_template("404.html"), 404
+   
+   #app.route('/error')
+   #def simulate_error():
+    # Intentional error to trigger a 500 Internal Server Error
+    #1 / 0   # Division by zero error
+   
+   @app.errorhandler(500)
+   def internal_server_error(error):
+      return render_template('500.html'), 500
+   
    # Create a dictionary of variable that are available 
    # to all html templates
    @app.context_processor

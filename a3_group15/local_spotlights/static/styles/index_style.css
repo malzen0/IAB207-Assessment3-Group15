@@ -452,3 +452,10 @@ a:hover, a:active {
     margin-bottom: 100px;
     border-radius: 10px;
 }
+
+.flashmessage{
+    border-radius: 10px;
+    height: auto;
+    margin-bottom: 0px;
+    font-family: Pixelify Sans !important;
+}

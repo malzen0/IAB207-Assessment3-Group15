@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/create_event_style.css') }}" />
+{% endblock head %}
+
+<body class="body">
+    {% block content %}
+    <div class="main_container">
+        <div class="container">
+            <h2>Edit Event</h2>
+            <form method="POST" action="{{ url_for('event.edit_event', id=event.id) }}" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    {{ form.artist.label }} {{ form.artist(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.genre.label }} {{ form.genre(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.venue.label }} {{ form.venue(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.start_time.label }} {{ form.start_time(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.end_time.label }} {{ form.end_time(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.date.label }} {{ form.date(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.ticket_quantity.label }} {{ form.ticket_quantity(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.ticket_price.label }} {{ form.ticket_price(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.description.label }} {{ form.description(class="form-control") }}
+                </div>
+                <div class="form-group" style="margin-left:auto; margin-right: auto;
+         margin-top:25px; display: block; padding-bottom: 50px;">
+                    {{ form.submit(class="btn btn-primary") }}
+                </div>
+            </form>
+        </div>
+    </div>
+    {% endblock content %}
+</body>

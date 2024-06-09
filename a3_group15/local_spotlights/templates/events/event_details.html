@@ -4,18 +4,19 @@
 {% block head %}
     {{ super() }}
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/event_details_style.css')}}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 {% endblock head %}
 
     {% block content %}
     <!-- Event Details -->
     <div style="margin:50px 50px 50px 50px;">
         <div class="container-fluid">
-            <h1 style="color:darkred; text-decoration: underline; ">{{event.artist}} performing live!</h1>
+            <h1>{{event.artist}} performing live!</h1>
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <img src="{{event.img}}" style="width:100%; border: 5px solid black; border-radius: 10px" />
                     <div class="container-fluid">
-                        <h1 style="color: darkred; text-decoration: underline;">Event Description</h1>
+                        <h1>Event Description</h1>
                         <h3>{{event.description}}</h3>
                     </div>
                 </div>
@@ -24,46 +25,76 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6">
-                                <h1 style="color: darkred; text-decoration: underline;">DETAILS</h1>
+                                <h1>DETAILS</h1>
                                 <h2 >Venue</h2>
-                                <h3>
+                                <p>
                                     {{event.venue}}
                                 </p>
-                                <h2 style="color: darkred; text-decoration: underline;">Time</h2>
+                                <h2>Time</h2>
                                 <p>
                                     {{event.start_time}}
                                 </p>
-                                <h2 style="color: darkred; text-decoration: underline;">Date</h2>
+                                <h2>Date</h2>
                                 <p>
                                     {{event.date}}
                                 </p>
-                                <h2 style="color: darkred; text-decoration: underline;">Opening Bands</h2>
+                                <h2>Opening Bands</h2>
                                 <p>
                                     Dog Pants Deluxe
                                 </h3>
                             </div>
                             <div class="col-md-6">
-                                <h1 style="color: darkred; text-decoration: underline;">TICKETS</h1>
+                                <h1>TICKETS</h1>
                                 <h2>Status</h2>
-                                <h3>
+                                <p>
                                     {{event_status.status}}
-                                </h3>
+                                </p>
                                 <h2>Availability</h2>
-                                <h3>
+                                <p>
                                     {{event_status.tickets_available}}
-                                </h3>
+                                </p>
                                 <h2>Price</h2>
-                                <h3>
+                                <p>
                                     ${{event.ticket_price}}
-                                </h3>
+                                </p>
 
                             </div>
                             {% if event_status.status in ['Cancelled', 'Sold Out', 'Inactive'] %}
-                            <button class="disabled-button" disabled style="text-align:center; font-size:40px; border-radius:10px;">No Tickets Available</button>
+                            <button class="disabled-button" disabled>No Tickets Available</button>
                             {% else %}
-                            <a href="{{ url_for('event.booking', id=event.id) }}" style="background-color:darkred; text-align:center;
-                                color:white; font-size:40px; border-radius:10px;">BOOK TICKETS HERE!</a>
+                            <a class="enabled-button" href="{{ url_for('event.booking', id=event.id) }}" >BOOK TICKETS HERE!</a>
+                                {% if current_user.id == event.user_id %}
+                                <div style="margin-top: 20px;">
+                                    <a href="{{ url_for('event.edit_event', id=event.id) }}" class="btn btn-primary">Edit Event</a>
+                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#cancelModal">Cancel Event</button>
+                                </div>
+                                
+                                <!-- Cancel Event Modal -->
+                                <div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="cancelModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="cancelModalLabel">Confirm Cancellation</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Are you sure you want to cancel this event?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <form action="{{ url_for('event.cancel_event', id=event.id) }}" method="POST" style="display:inline;">
+                                                    <button type="submit" class="btn btn-warning">Yes, Cancel Event</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endif %}
                             {% endif %}
+
+                            
                         </div>
                     </div>
                 </div>
@@ -72,10 +103,16 @@
             <!-- Comments -->
             <div class="row" style="margin-bottom:50px;">
                 <div class="col-md-6 col-sm-12">
+<<<<<<< HEAD
                     <div style="margin-left:10px;">
                         <h2 style="color: darkred; text-decoration: underline; overflow:auto;">See What People Are Saying!</h2>
                         <div style="background-color:white; border-radius:10px; padding:20px; font-family:azeret mono;">
                             {% for comment in event.comments %}
+=======
+                    <h1>See What People Are Saying!</h1>
+                    <div>
+                        {% for comment in event.comments %}
+>>>>>>> d7bd03fc81901b85f4b5d28faffcc4b2c07287dc
                             <b>{{comment.user.name}} <span class="ml-2 text-muted">{{comment.created_at.strftime('%d-%m-%Y %H:%M')}}</span></b>
                             <p>{{comment.text}}</p>
                             {% endfor %}

@@ -29,7 +29,7 @@ def login(): #view function
                 return redirect(url_for('main.index'))
             return redirect(nextp)
         else:
-            flash(error)
+            flash(error,'danger')
     return render_template('user.html', form=login_form, heading='Login')
 
 # Registering a user

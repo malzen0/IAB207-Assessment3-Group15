@@ -1,7 +1,7 @@
 from multiprocessing import Value
 from flask import Blueprint, render_template, request, redirect, url_for, flash, abort
 from .models import Event, EventStatus, Comment, Order
-from .forms import EventForm, CommentForm, TicketBookingForm
+from .forms import EventForm, CommentForm, TicketBookingForm, EditEventForm
 from . import db
 import os
 from werkzeug.utils import secure_filename
@@ -45,18 +45,14 @@ def index():
 
 def update_db():
     current_date = date.today()
-    print(current_date)
 
     events = db.session.query(Event).all()
 
     for event in events:
         event_status = db.session.query(EventStatus).filter_by(event_id=event.id).first()
         status_text = event_status.status if event_status else None
-        print(f"Event Status: '{status_text}', Event Date: {event.date}, Artist: {event.artist}")
         if event.date < current_date and status_text == 'Open':
-                print(event.artist)
                 db.session.query(EventStatus).filter_by(event_id=event.id).update({'status': 'Inactive'})
-                print("updated "+event.artist)
                 db.session.commit()
 
 # Event 
@@ -76,7 +72,6 @@ def show(id):
 @eventbp.route('/create', methods = ['GET', 'POST'])
 @login_required
 def create():
-    print('Method type: ', request.method)
     form = EventForm()
     if form.validate_on_submit():
         # Call function to check and return image 
@@ -92,6 +87,7 @@ def create():
             ticket_price = form.ticket_price.data,
             description = form.description.data, 
             img = db_file_path,
+            user_id = current_user.id,
             )
         
         #add the object to the database session 
@@ -150,22 +146,81 @@ def comment(id):
         # Flash success when comment uploads
         flash('Your comment has been added', 'success')
     return redirect(url_for('event.show', id = id))
-            
-# Cancel the event
-@eventbp.route('/<id>/cancel')
-def cancel(id):
+
+# My events - events created by current user
+@eventbp.route('/my-events')
+def my_events():
+    user_events = db.session.query(Event).join(EventStatus).filter(Event.user_id == current_user.id).all()
+    upcoming_events = [event for event in user_events if event.status.status == 'Open' or event.status.status == 'Sold Out' ]
+    past_events = [event for event in user_events if event.status.status == 'Cancelled' or event.status.status == 'Inactive']
+    return render_template('events/my_events.html', upcoming_events=upcoming_events, past_events=past_events)
+
+
+@eventbp.route('/<id>/edit-event', methods=['GET', 'POST'])
+@login_required
+def edit_event(id):
     event = db.session.scalar(db.select(Event).where(Event.id == id))
-    #
-    # 
-    # 
-    return redirect(url_for('event.show', id=id))
+    if not event:
+        abort(404)
+
+    if event.user_id != current_user.id:
+        flash('You are not authorized to edit this event', 'danger')
+        return redirect(url_for('eventbp.my_events'))
+    
+    form = EditEventForm(obj=event)
+    if form.validate_on_submit():
+        #Cannot reduce the number of tickets
+        if form.ticket_quantity.data < event.ticket_quantity:
+            flash('Ticket quantity cannot be less than the current ticket quantity.', 'danger')
+        else:
+            #Calculate the number of addtional tickets added
+            quantity_change = form.ticket_quantity.data - event.ticket_quantity
+            if quantity_change > 0:
+                event.status.status = 'Open'
+
+            #Update event details
+            event.artist = form.artist.data
+            event.genre = form.genre.data
+            event.venue = form.venue.data
+            event.start_time = form.start_time.data
+            event.end_time = form.end_time.data
+            event.date = form.date.data
+            event.ticket_quantity = form.ticket_quantity.data
+            event.ticket_price = form.ticket_price.data
+            event.description = form.description.data
+            
+            # Update tickets_available in EventStatus
+            event.status.tickets_available += quantity_change
+
+            db.session.commit()
+            flash('Event has been updated', 'success')
+            return redirect(url_for('event.my_events'))
+    
+    return render_template('events/edit_event.html', form=form, event=event)
+
+# Cancel the event
+@eventbp.route('/<id>/cancel', methods = ['GET', 'POST'])
+def cancel_event(id):
+    event = db.session.scalar(db.select(Event).where(Event.id == id))
+    if not event:
+        abort(404)
+
+    if event.user_id != current_user.id:
+        flash('You are not authorized to cancel this event', 'danger')
+        return redirect(url_for('event.my_events'))
+
+    event.status.status = 'Cancelled'
+    db.session.commit()
+    flash(f'Event for "{event.artist}" has been cancelled', 'success')
+    return redirect(url_for('event.my_events'))
 
 # Booked events 
 @eventbp.route('/booked-events')
 def booked_events():
-    orders = db.session.query(Order).filter_by(user_id=current_user.id).all()
-    order_event_info = [(order, order.event) for order in orders]
-    return render_template('events/booked_events.html', order_event_info=order_event_info)
+    orders = db.session.query(Order).join(Event).join(EventStatus).filter(Order.user_id == current_user.id).all()
+    upcoming_events = [(order, order.event) for order in orders if order.event.status.status == 'Open' or order.event.status.status == 'Sold Out']
+    past_events = [(order, order.event) for order in orders if order.event.status.status == 'Cancelled' or order.event.status.status == 'Inactive']
+    return render_template('events/booked_events.html', upcoming_events=upcoming_events, past_events=past_events)
 
 
 # Book event ticket
@@ -173,12 +228,10 @@ def booked_events():
 @login_required
 def booking(id):
     event = db.session.scalar(db.select(Event).where(Event.id == id))
-    print(event.artist)
     if not event:
         abort(404)
 
     event_status = db.session.scalar(db.select(EventStatus).where(EventStatus.event_id == id))
-    print(event_status.status)
     if not event_status:
         abort(404)
 
@@ -189,11 +242,9 @@ def booking(id):
         else:
             order = Order(ticket_quantity = form.ticket_quantity.data, event=event, user=current_user)
             #add the object to the database session 
-            print(f'Before: {event_status.tickets_available}')
             event_status.tickets_available -= form.ticket_quantity.data
             if event_status.tickets_available == 0:
                 event_status.status= "Sold Out"
-            print(f'After: {event_status.tickets_available}')
             db.session.add(order)
             db.session.commit()
             flash('Succesfully purchased tickets', 'success')
