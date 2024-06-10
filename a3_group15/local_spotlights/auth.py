@@ -38,6 +38,8 @@ def register():
     register_form = RegisterForm()
     if register_form.validate_on_submit():
         user_name = register_form.user_name.data
+        first_name = register_form.first_name.data
+        last_name = register_form.last_name.data
         email_id = register_form.email_id.data
         mobile_num = register_form.mobile_num.data
         address = register_form.address.data
@@ -47,7 +49,9 @@ def register():
         existing_user = User.query.filter_by(name=user_name).first()
         if existing_user is None:
             # Create a new user 
-            new_user = User(name=user_name, 
+            new_user = User(name=user_name,
+                            first_name=first_name,
+                            last_name=last_name, 
                             email_id=email_id, 
                             mobile_num=mobile_num,
                             address=address, 

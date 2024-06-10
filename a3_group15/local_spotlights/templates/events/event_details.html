@@ -32,16 +32,12 @@
                                 </p>
                                 <h2>Time</h2>
                                 <p>
-                                    {{event.start_time}}
+                                    {{event.start_time.strftime('%H:%M')}}{{event.end_time.strftime(' - %H:%M')}}
                                 </p>
                                 <h2>Date</h2>
                                 <p>
                                     {{event.date.strftime('%d-%m-%Y')}}
                                 </p>
-                                <h2>Opening Bands</h2>
-                                <p>
-                                    Dog Pants Deluxe
-                                </h3>
                             </div>
                             <div class="col-md-6">
                                 <h1>TICKETS</h1>
@@ -106,10 +102,9 @@
                     <h1>See What People Are Saying!</h1>
                     <div>
                         {% for comment in event.comments %}
-                            <b>{{comment.user.name}} <span class="ml-2 text-muted">{{comment.created_at.strftime('%d-%m-%Y %H:%M')}}</span></b>
-                            <p>{{comment.text}}</p>
-                            {% endfor %}
-                        </div>
+                        <b>{{comment.user.name}} <span class="ml-2 text-muted">{{comment.created_at.strftime('  %d-%m-%Y')}}</span></b>
+                        <p>{{comment.text}}</p>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12 ">

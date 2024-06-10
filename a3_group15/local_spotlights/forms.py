@@ -17,6 +17,8 @@ class LoginForm(FlaskForm):
  # this is the registration form
 class RegisterForm(FlaskForm):
     user_name=StringField("User Name", validators=[InputRequired()])
+    first_name=StringField("First Name", validators=[InputRequired()])
+    last_name=StringField("Last Name", validators=[InputRequired()])
     email_id = StringField("Email Address", validators=[Email("Please enter a valid email")])
     mobile_num = TelField("Mobile Number", validators=[InputRequired()])
     address = StringField("Address", validators=[InputRequired()])
@@ -53,7 +55,7 @@ class EventForm(FlaskForm):
 class TicketBookingForm(FlaskForm):
     ticket_quantity = IntegerField("Ticket Quantity", validators=[InputRequired(), NumberRange(min = 1)])
     cardholder_name = StringField('Cardholder Name', validators=[InputRequired()])
-    card_number = StringField('Card Number', validators=[InputRequired(), Length(min=16, max=16)])
+    card_number = StringField('Card Number', validators=[InputRequired(), Length(min=16, max=19)])
     expiration_date = StringField('Expiration Date', validators=[InputRequired(), Regexp(r'^\d{2}/\d{2}$', message='MM/YY format')])
     cvv = StringField('CVV', validators=[InputRequired(), Length(min=3, max=4)])
     submit = SubmitField("Book Ticket")
