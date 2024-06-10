@@ -13,9 +13,11 @@ class User(db.Model, UserMixin):
     password_hash = db.Column(db.String(255), nullable=False)
     mobile_num = db.Column(db.String(20))
     address = db.Column(db.String(100))
+    
     comments = db.relationship('Comment', backref='user')
     events = db.relationship('Event', backref='user')
     order = db.relationship('Order', backref='user')
+    
     # String print method 
     def __repr__(self):
         return f"Name: {self.name}"
@@ -58,6 +60,7 @@ class EventStatus(db.Model):
     tickets_available = db.Column(db.Integer)
     status_date = db.Column(db.DateTime, default = datetime.now())
     
+    # Foriegn keys
     event_id = db.Column(db.Integer, db.ForeignKey('events.id'))
 
     #String print method

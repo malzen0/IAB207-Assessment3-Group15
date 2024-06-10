@@ -17,12 +17,17 @@ def index():
     
     return render_template('index.html', events=events, selected_genres=genres)
 
+# Update database for inactive event status
 def update_db():
     current_date = date.today()
     events = db.session.query(Event).all()
+    
+    # Get status for each event
     for event in events:
         event_status = db.session.query(EventStatus).filter_by(event_id=event.id).first()
         status_text = event_status.status if event_status else None
+        
+        # If event date is in past and event status is open then update to inactive
         if event.date < current_date and status_text == 'Open':
                 db.session.query(EventStatus).filter_by(event_id=event.id).update({'status': 'Inactive'})
                 db.session.commit()

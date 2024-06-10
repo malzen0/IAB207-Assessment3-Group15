@@ -2,7 +2,7 @@ from flask import Blueprint, flash, render_template, request, url_for, redirect
 from werkzeug.security import generate_password_hash,check_password_hash
 from .models import User
 from .forms import LoginForm,RegisterForm
-from flask_login import login_user, login_required,logout_user
+from flask_login import login_user, login_required, logout_user
 from . import db
 
 # Create a blueprint - make sure all BPs have unique names
@@ -10,7 +10,7 @@ auth_bp = Blueprint('auth', __name__)
 
 # Logging in as a user
 @auth_bp.route('/login', methods=['GET', 'POST'])
-def login(): #view function
+def login(): 
     login_form = LoginForm()
     error=None
     if(login_form.validate_on_submit()==True):
@@ -19,11 +19,15 @@ def login(): #view function
         u1 = User.query.filter_by(name=user_name).first()
         if u1 is None:
             error='Incorrect user name'
-        elif not check_password_hash(u1.password_hash, password): # takes the hash and password
+        
+        # takes the hash and password
+        elif not check_password_hash(u1.password_hash, password): 
             error='Incorrect password'
+            
+        # If there is no error then log in
         if error is None:
             login_user(u1)
-            nextp = request.args.get('next') #this gives the url from where the login page was accessed
+            nextp = request.args.get('next') 
             print(nextp)
             if nextp is None or not nextp.startswith('/'):
                 return redirect(url_for('main.index'))
@@ -60,6 +64,8 @@ def register():
             db.session.commit()
             flash('Registration successful', 'success')
             return redirect(url_for('auth.login'))
+        
+        # If the username is a duplicate, required to choose a different username
         else:
             flash('Username already exists. Please choose a different username', 'warning')
     return render_template('user.html', form=register_form, heading='Register') 

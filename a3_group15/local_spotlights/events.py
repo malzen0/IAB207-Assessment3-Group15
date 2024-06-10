@@ -19,26 +19,31 @@ def index():
     location = request.args.get('location','')
     date = request.args.get('date','')
     
+    # Query for events that are not inactive
     query = db.session.query(Event).join(EventStatus).filter(EventStatus.status != 'Inactive')
 
+    # if genre is selected filter by selected genre
     if genres:
         query=query.filter(Event.genre.in_(genres))
-        
+    
+    # if the location is provided filter by location
     if location:
         location_filter = f"%{location}%"
         query = query.filter(
             or_(Event.venue.ilike(location_filter)))
 
+    # if date is provided filter by the event date
     if date:
         try: 
             date_actual = datetime.strptime(date, '%Y-%m-%d')
             date_range_start = date_actual - timedelta(days=30)
             date_range_end = date_actual + timedelta(days=30)
             query = query.filter(Event.date.between(date_range_start,date_range_end))
-            ## Exception handling
+            # Exception handling
         except ValueError:
             pass
     
+    # Get all matching events
     events= query.all()
         
     return render_template('index.html', events=events, selected_genres=genres, location = location, date=date)

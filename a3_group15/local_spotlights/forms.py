@@ -50,6 +50,7 @@ class EventForm(FlaskForm):
     img = FileField("Image", validators= [FileRequired(message='Image cannot be empty'), FileAllowed(ALLOWED_FILE, message='Only supports png, jpg, JPG, PNG')])
     submit = SubmitField("Create Event")
     
+    # Event date validation - date cannot be in the past
     def validate_date(form, date):
         if date.data < datetime.date.today():
             raise ValidationError("The date cannot be in the past!")
