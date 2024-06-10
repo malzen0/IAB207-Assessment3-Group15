@@ -1,4 +1,3 @@
-from multiprocessing import Value
 from flask import Blueprint, render_template, request, redirect, url_for, flash, abort
 from .models import Event, EventStatus, Comment, Order
 from .forms import EventForm, CommentForm, TicketBookingForm, EditEventForm
@@ -6,7 +5,7 @@ from . import db
 import os
 from werkzeug.utils import secure_filename
 from flask_login import login_required, current_user
-from datetime import datetime, date, time, timedelta
+from datetime import datetime, date, timedelta
 from sqlalchemy import or_
 
 eventbp = Blueprint('event', __name__, url_prefix='/events', static_folder='static')
@@ -19,7 +18,7 @@ def index():
     location = request.args.get('location','')
     date = request.args.get('date','')
     
-    # Query for events that are not inactive
+    # Base query for events that are not inactive
     query = db.session.query(Event).join(EventStatus).filter(EventStatus.status != 'Inactive')
 
     # if genre is selected filter by selected genre
@@ -48,14 +47,16 @@ def index():
         
     return render_template('index.html', events=events, selected_genres=genres, location = location, date=date)
 
+# Update database for inactive event status
 def update_db():
     current_date = date.today()
-
     events = db.session.query(Event).all()
 
+    # Get status for each event
     for event in events:
         event_status = db.session.query(EventStatus).filter_by(event_id=event.id).first()
         status_text = event_status.status if event_status else None
+        # If event date is in past and event status is open then update to inactive
         if event.date < current_date and status_text == 'Open':
                 db.session.query(EventStatus).filter_by(event_id=event.id).update({'status': 'Inactive'})
                 db.session.commit()
@@ -155,6 +156,7 @@ def comment(id):
 # My events - events created by current user
 @eventbp.route('/my-events')
 def my_events():
+    #Get all events created by current user and group by upcoming (Open or sold out events) and past (Inactive or cancelled)
     user_events = db.session.query(Event).join(EventStatus).filter(Event.user_id == current_user.id).all()
     upcoming_events = [event for event in user_events if event.status.status == 'Open' or event.status.status == 'Sold Out' ]
     past_events = [event for event in user_events if event.status.status == 'Cancelled' or event.status.status == 'Inactive']
@@ -222,6 +224,7 @@ def cancel_event(id):
 # Booked events 
 @eventbp.route('/booked-events')
 def booked_events():
+    #Get all event orders made by current user
     orders = db.session.query(Order).join(Event).join(EventStatus).filter(Order.user_id == current_user.id).all()
     upcoming_events = [(order, order.event) for order in orders if order.event.status.status == 'Open' or order.event.status.status == 'Sold Out']
     past_events = [(order, order.event) for order in orders if order.event.status.status == 'Cancelled' or order.event.status.status == 'Inactive']
@@ -242,12 +245,14 @@ def booking(id):
 
     form = TicketBookingForm(event_id=id)
     if form.validate_on_submit():
+        #Check ticket purchase quantity to ensure there are enough tickets available
         if form.ticket_quantity.data > event_status.tickets_available:
             flash('The number of tickets requested exceeds the available tickets.', 'danger')
         else:
             order = Order(ticket_quantity = form.ticket_quantity.data, event=event, user=current_user)
-            #add the object to the database session 
+            #Update number of available tickets
             event_status.tickets_available -= form.ticket_quantity.data
+            #Update event status to 'sold out' if tickets available reaches 0
             if event_status.tickets_available == 0:
                 event_status.status= "Sold Out"
             db.session.add(order)
