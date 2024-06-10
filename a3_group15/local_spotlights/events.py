@@ -19,7 +19,7 @@ def index():
     location = request.args.get('location','')
     date = request.args.get('date','')
     
-    query = db.session.query(Event)
+    query = db.session.query(Event).join(EventStatus).filter(EventStatus.status != 'Inactive')
 
     if genres:
         query=query.filter(Event.genre.in_(genres))
