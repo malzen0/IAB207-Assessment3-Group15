@@ -1,5 +1,5 @@
 from datetime import date
-from flask import Blueprint, app, render_template, request, redirect, url_for
+from flask import Blueprint, render_template
 from .models import Event, EventStatus
 from .models import Event
 from . import db
@@ -9,13 +9,9 @@ main_bp = Blueprint('main', __name__)
 @main_bp.route('/')
 def index():
     update_db()
-    genres = request.args.getlist('genres')
-    if not genres:
-        events = db.session.query(Event).join(EventStatus).filter(EventStatus.status != 'Inactive').all()
-    else:
-        events = db.session.query(Event).join(EventStatus).filter(EventStatus.status != 'Inactive', Event.genre.in_(genres)).all()
-    
-    return render_template('index.html', events=events, selected_genres=genres)
+    # Query for events that are not inactive
+    events = db.session.query(Event).join(EventStatus).filter(EventStatus.status != 'Inactive').all()
+    return render_template('index.html', events=events)
 
 # Update database for inactive event status
 def update_db():

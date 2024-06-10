@@ -3,7 +3,6 @@ from flask_wtf.file import FileAllowed, FileRequired
 from wtforms import DateField, TimeField, IntegerField, SelectField, ValidationError 
 from wtforms.fields import TextAreaField,SubmitField, StringField, PasswordField, FileField, IntegerField, FloatField, TelField 
 from wtforms.validators import InputRequired, Length, Email, EqualTo, NumberRange, Regexp
-from .models import EventStatus
 import datetime
  
 ALLOWED_FILE = {'PNG', 'JPG', 'JPEG', 'png', 'jpg', 'jpeg'}
@@ -77,6 +76,7 @@ class EditEventForm(FlaskForm):
     description = TextAreaField('Description', validators=[InputRequired()])
     submit = SubmitField('Update Event')
     
+    # Event date validation - date cannot be in the past
     def validate_date(form, date):
         if date.data < datetime.date.today():
             raise ValidationError("The date cannot be in the past!")
