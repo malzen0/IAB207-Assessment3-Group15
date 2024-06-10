@@ -1,8 +1,12 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/error_handling_style.css') }}" />
+{% endblock head %}
 
-<div class="container">
+{% block content %}
+<div class="container" style="height:750px";>
     <div class="row">
         <div class="col-6">
             <h1>404 Not Found</h1>

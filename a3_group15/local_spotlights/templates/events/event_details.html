@@ -100,9 +100,9 @@
             <div class="row" style="margin-bottom:50px;">
                 <div class="col-md-6 col-sm-12">
                     <h1>See What People Are Saying!</h1>
-                    <div>
+                    <div style="background-color:white; border-radius: 10px; padding:10px;">
                         {% for comment in event.comments %}
-                        <b>{{comment.user.name}} <span class="ml-2 text-muted">{{comment.created_at.strftime('  %d-%m-%Y')}}</span></b>
+                        <b style="text-decoration:underline;">{{comment.user.name}} <span class="ml-2 text-muted">{{comment.created_at.strftime('  %d-%m-%Y')}}</span></b>
                         <p>{{comment.text}}</p>
                         {% endfor %}
                     </div>

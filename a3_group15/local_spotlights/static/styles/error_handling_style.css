@@ -1,0 +1,92 @@
+/*Main*/
+body {
+    background-color: indianred !important;
+    font-size: 30px;
+    font-family: Pixelify Sans !important;
+    font-weight: 500;
+    overflow-x: hidden;
+}
+
+/*fonts*/
+.pixelify-sans-<uniquifier > {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.azeret-mono-<uniquifier > {
+    font-family: "Azeret Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/*Navigation/heading bars*/
+.topnav {
+    background-color: pink;
+    overflow: hidden;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+    .topnav .icon {
+        display: none !important;
+    }
+
+@media screen and (max-width:1700px) {
+    .topnav a:not(:first-child) {
+        display: none !important;
+    }
+
+    .topnav a.icon {
+        float: right !important;
+        display: block !important;
+    }
+}
+
+@media screen and (max-width: 1700px) {
+    .topnav.responsive {
+        position: relative !important;
+    }
+
+    .topnav.respnsive .icon {
+        position: absolute !important;
+        right: 0 !important;
+        top: 0 !important;
+    }
+
+    .topnav.responsive a {
+        float: none !important;
+        display: block !important;
+        text-align: left !important;
+    }
+}
+
+
+
+.topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 32px;
+    font-family: Pixelify Sans !important;
+    font-weight: 500;
+}
+
+    .topnav a:hover {
+        background-color: pink;
+        color: none;
+    }
+
+    .topnav a.active {
+        color: darkred;
+        font-size: 32px;
+    }
+
+.topnav .icon {
+    display: none;
+}
