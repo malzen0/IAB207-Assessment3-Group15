@@ -4,7 +4,7 @@ from wtforms import DateField, TimeField, IntegerField, SelectField, ValidationE
 from wtforms.fields import TextAreaField,SubmitField, StringField, PasswordField, FileField, IntegerField, FloatField, TelField 
 from wtforms.validators import InputRequired, Length, Email, EqualTo, NumberRange, Regexp
 from .models import EventStatus
-from . import db
+import datetime
  
 ALLOWED_FILE = {'PNG', 'JPG', 'JPEG', 'png', 'jpg', 'jpeg'}
 
@@ -50,6 +50,9 @@ class EventForm(FlaskForm):
     img = FileField("Image", validators= [FileRequired(message='Image cannot be empty'), FileAllowed(ALLOWED_FILE, message='Only supports png, jpg, JPG, PNG')])
     submit = SubmitField("Create Event")
     
+    def validate_date(form, date):
+        if date.data < datetime.date.today():
+            raise ValidationError("The date cannot be in the past!")
 
 #This is the ticket booking form 
 class TicketBookingForm(FlaskForm):
@@ -73,3 +76,6 @@ class EditEventForm(FlaskForm):
     description = TextAreaField('Description', validators=[InputRequired()])
     submit = SubmitField('Update Event')
     
+    def validate_date(form, date):
+        if date.data < datetime.date.today():
+            raise ValidationError("The date cannot be in the past!")
